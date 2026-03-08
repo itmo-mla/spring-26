@@ -13,7 +13,7 @@ class Node:
         'n_samples'
     ]
 
-    def __init__(self, class_counts: np.ndarray, n_samples: float) -> None:
+    def __init__(self, class_counts: np.ndarray, n_samples: float):
         self.feature_idx: int | None = None
         # float-порог для непрерывных разбиений; None — категориальный узел
         self.threshold: float | None = None
@@ -23,7 +23,7 @@ class Node:
         self.n_samples: float = n_samples
 
 class ID3Tree:
-    def __init__(self, max_depth: int | None = None, min_samples_split: int = 2) -> None:
+    def __init__(self, max_depth: int | None = None, min_samples_split: int = 2):
         self.max_depth = max_depth
         self.min_samples_split = min_samples_split
         self.root: Node | None = None
@@ -35,34 +35,34 @@ class ID3Tree:
     # Публичный API
     # ------------------------------------------------------------------
 
-    def fit(self, X: np.ndarray, y: np.ndarray, is_categorical: list[bool]) -> None:
+    def fit(self, X: np.ndarray, y: np.ndarray, is_categorical: list[bool]):
         self.is_categorical = list(is_categorical)
         self.classes_ = np.unique(y)
         self.n_classes = len(self.classes_)
         weights = np.ones(len(y), dtype=float)
         self.root = self._build(X, y, weights, depth=0)
 
-    def predict(self, X: np.ndarray) -> np.ndarray:
+    def predict(self, X: np.ndarray):
         return np.array([self._predict_one(x) for x in X])
 
-    def prune(self, X_val: np.ndarray, y_val: np.ndarray) -> None:
+    def prune(self, X_val: np.ndarray, y_val: np.ndarray):
         self._prune_node(self.root, X_val, y_val)
 
-    def depth(self) -> int:
+    def depth(self):
         return self._depth(self.root)
 
-    def count_nodes(self) -> int:
+    def count_nodes(self):
         return self._count(self.root)
 
     # ------------------------------------------------------------------
     # Вспомогательные методы
     # ------------------------------------------------------------------
 
-    def _class_counts(self, y: np.ndarray, weights: np.ndarray) -> np.ndarray:
+    def _class_counts(self, y: np.ndarray, weights: np.ndarray):
         """Вернуть взвешенный массив подсчёта классов формы (n_classes,)."""
         return np.array([weights[y == c].sum() for c in self.classes_])
 
-    def _gini(self, counts: np.ndarray) -> float:
+    def _gini(self, counts: np.ndarray):
         """Вычислить индекс Джини по взвешенному массиву подсчёта классов"""
         total = counts.sum()
         if total == 0:
@@ -70,19 +70,19 @@ class ID3Tree:
         p = counts / total
         return 1.0 - float(np.dot(p, p))
 
-    def _weighted_gini(self, splits: list[list]) -> float:
+    def _weighted_gini(self, splits: list[list]):
         """Вычислить взвешенное среднее Джини по нескольким дочерним разбиениям"""
         total = sum(w for _, w in splits)
         if total == 0: return 0.0
         return sum((w / total) * self._gini(c) for c, w in splits if w > 0)
 
-    def _node_distribution(self, node: Node) -> np.ndarray:
+    def _node_distribution(self, node: Node):
         """Вернуть вектор вероятностей классов, хранящийся в узле"""
         total = node.class_counts.sum()
         if total == 0: return np.ones(self.n_classes) / self.n_classes
         return node.class_counts / total
 
-    def _majority_label(self, node: Node) -> Any:
+    def _majority_label(self, node: Node):
         """Вернуть метку класса большинства для данного узла"""
         return self.classes_[int(np.argmax(node.class_counts))]
 
@@ -97,7 +97,7 @@ class ID3Tree:
         X: np.ndarray,
         y: np.ndarray,
         depth: int,
-    ) -> None:
+    ):
         """Сформировать веса дочернего узла и рекурсивно построить его"""
         child_w = np.zeros_like(weights)
         child_w[mask] = weights[mask]
@@ -107,14 +107,14 @@ class ID3Tree:
         if active.sum() > 0:
             node.children[key] = self._build(X[active], y[active], child_w[active], depth + 1)
 
-    def _route_to_child(self, node: Node, key: float | int, x: np.ndarray) -> np.ndarray:
+    def _route_to_child(self, node: Node, key: float | int, x: np.ndarray):
         """Перейти в дочерний узел по ключу или вернуть распределение текущего узла"""
         child = node.children.get(key)
         return self._proba(x, child) if child is not None else self._node_distribution(node)
 
     def _add_missing_to_splits(
         self, splits: list[list], y_miss: np.ndarray, w_miss: np.ndarray
-    ) -> None:
+    ):
         """Добавить пропущенные образцы к splits пропорционально начальным весам ветвей"""
         branch_weights = np.array([s[1] for s in splits])
         total_w = branch_weights.sum()
@@ -134,7 +134,7 @@ class ID3Tree:
         weights: np.ndarray,
         not_miss: np.ndarray,
         miss: np.ndarray,
-    ) -> tuple[float, None]:
+    ):
         """Оценить разбиение категориального признака и вернуть его взвешенный Джини"""
         unique_vals = np.unique(col[not_miss])
         if len(unique_vals) <= 1:
@@ -161,7 +161,7 @@ class ID3Tree:
         weights: np.ndarray,
         not_miss: np.ndarray,
         miss: np.ndarray,
-    ) -> tuple[float, float | None]:
+    ):
         """Найти наилучший бинарный порог для непрерывного признака"""
         vals = np.sort(np.unique(col[not_miss]))
         if len(vals) <= 1:
@@ -195,7 +195,7 @@ class ID3Tree:
 
     def _best_split(
         self, X: np.ndarray, y: np.ndarray, weights: np.ndarray
-    ) -> tuple[int | None, float | None]:
+    ):
         """Перебрать все признаки и вернуть тот, что минимизирует взвешенный Джини"""
         best_gini = float('inf')
         best_feat: int | None = None
@@ -225,7 +225,7 @@ class ID3Tree:
     # Построение дерева
     # ------------------------------------------------------------------
 
-    def _should_stop(self, y: np.ndarray, weights: np.ndarray, depth: int) -> bool:
+    def _should_stop(self, y: np.ndarray, weights: np.ndarray, depth: int):
         """Вернуть True, если рост дерева в этом узле нужно остановить"""
         return (
             len(np.unique(y)) == 1
@@ -243,7 +243,7 @@ class ID3Tree:
         not_miss: np.ndarray,
         miss: np.ndarray,
         depth: int,
-    ) -> None:
+    ):
         """Добавить по одному дочернему узлу на каждое уникальное значение категории"""
         unique_vals = np.unique(col[not_miss])
         not_miss_w = weights[not_miss].sum()
@@ -265,7 +265,7 @@ class ID3Tree:
         miss: np.ndarray,
         thresh: float,
         depth: int,
-    ) -> None:
+    ):
         """Добавить левый (ключ=0) и правый (ключ=1) дочерние узлы для бинарного порогового разбиения"""
         node.threshold = thresh
 
@@ -280,7 +280,7 @@ class ID3Tree:
         for key, mask, frac in ((0, left_mask, fl), (1, right_mask, fr)):
             self._attach_child(node, key, mask, frac, weights, miss, X, y, depth)
 
-    def _build(self, X: np.ndarray, y: np.ndarray, weights: np.ndarray, depth: int) -> Node:
+    def _build(self, X: np.ndarray, y: np.ndarray, weights: np.ndarray, depth: int):
         """Рекурсивно построить дерево решений"""
         class_counts = self._class_counts(y, weights)
         node = Node(class_counts=class_counts, n_samples=float(weights.sum()))
@@ -311,12 +311,12 @@ class ID3Tree:
     # Предсказание
     # ------------------------------------------------------------------
 
-    def _predict_one(self, x: np.ndarray) -> Any:
+    def _predict_one(self, x: np.ndarray):
         """Предсказать метку класса для одного образца"""
         proba = self._proba(x, self.root)
         return self.classes_[int(np.argmax(proba))]
 
-    def _proba(self, x: np.ndarray, node: Node) -> np.ndarray:
+    def _proba(self, x: np.ndarray, node: Node):
         """Рекурсивно вычислить вектор вероятностей классов для образца x"""
         if not node.children:
             return self._node_distribution(node)
@@ -343,7 +343,7 @@ class ID3Tree:
     # Сокращение дерева (Reduced Error Pruning)
     # ------------------------------------------------------------------
 
-    def _prune_node(self, node: Node, X_val: np.ndarray, y_val: np.ndarray) -> None:
+    def _prune_node(self, node: Node, X_val: np.ndarray, y_val: np.ndarray):
         """Сокращение дерева снизу вверх методом Reduced Error Pruning"""
         if not node.children or len(y_val) == 0:
             return
@@ -379,12 +379,12 @@ class ID3Tree:
     # Статистика дерева
     # ------------------------------------------------------------------
 
-    def _depth(self, node: Node) -> int:
+    def _depth(self, node: Node):
         """Вернуть максимальную глубину поддерева с корнем в node"""
         if not node.children: return 0
         return 1 + max(self._depth(c) for c in node.children.values())
 
-    def _count(self, node: Node) -> int:
+    def _count(self, node: Node):
         """Вернуть общее количество узлов в поддереве с корнем в node"""
         if not node.children: return 1
         return 1 + sum(self._count(c) for c in node.children.values())

@@ -21,9 +21,9 @@ def run_pipeline(
         y_test: np.ndarray,
         is_categorical: list[bool],
         save_path: str,
-) -> None:
+):
     # Обучаем собственную модель
-    logging.info("Обучаем кастомное дерево ID3 (Gini, взвешивание пропусков)...")
+    logging.info("Обучаем кастомное дерево ID3")
     tree = ID3Tree(max_depth=None, min_samples_split=2)
     tree.fit(X_train, y_train, is_categorical)
     logging.info(f"Глубина: {tree.depth()},  Узлов: {tree.count_nodes()}")
@@ -32,15 +32,13 @@ def run_pipeline(
     y_pred_train_before = tree.predict(X_train)
     y_pred_before = tree.predict(X_test)
 
-    evaluate(y_train, y_pred_train_before, "ID3 – Train (до редукции)",
+    path = os.path.join(save_path, "id3_train_before.txt")
+    evaluate(y_train, y_pred_train_before, "ID3 train (до редукции)", save_path=path)
+    path = os.path.join(save_path, "id3_test_before.txt")
+    evaluate(y_test, y_pred_before, "ID3 test (до редукции)", save_path=path)
 
-             save_path=os.path.join(save_path, "id3_train_before.txt"))
-    evaluate(y_test, y_pred_before, "ID3 – Test (до редукции)",
-
-             save_path=os.path.join(save_path, "id3_test_before.txt"))
-
-    # Редукция дерева по валидационной выборке (Reduced Error Pruning)
-    logging.info("Применяем Reduced Error Pruning (валидационная выборка)...")
+    # Редукция дерева по валидационной выборке
+    logging.info("Применяем Reduced Error Pruning")
     tree.prune(X_val, y_val)
     logging.info(f"Глубина после редукции: {tree.depth()},  Узлов: {tree.count_nodes()}")
 
@@ -48,15 +46,13 @@ def run_pipeline(
     y_pred_train_after = tree.predict(X_train)
     y_pred_after = tree.predict(X_test)
 
-    evaluate(y_train, y_pred_train_after, "ID3 – Train (после редукции)",
+    path = os.path.join(save_path, "id3_train_after.txt")
+    evaluate(y_train, y_pred_train_after, "ID3 train (после редукции)", save_path=path)
+    path = os.path.join(save_path, "id3_test_after.txt")
+    evaluate(y_test, y_pred_after, "ID3 test (после редукции)", save_path=path)
 
-             save_path=os.path.join(save_path, "id3_train_after.txt"))
-    evaluate(y_test, y_pred_after, "ID3 – Test (после редукции)",
-
-             save_path=os.path.join(save_path, "id3_test_after.txt"))
-
-    # Эталонная модель sklearn (заполнение пропусков средним)
-    logging.info("Обучаем sklearn DecisionTreeClassifier (заполнение пропусков средним)...")
+    # Эталонная модель sklearn
+    logging.info("Обучаем sklearn DecisionTreeClassifier")
     imputer = SimpleImputer(strategy='mean')
     X_train_imp = imputer.fit_transform(X_train)
     X_test_imp = imputer.transform(X_test)
@@ -65,9 +61,8 @@ def run_pipeline(
     sk_tree.fit(X_train_imp, y_train)
     y_pred_sklearn = sk_tree.predict(X_test_imp)
 
-    evaluate(y_test, y_pred_sklearn, "sklearn DecisionTree – Test",
-
-             save_path=os.path.join(save_path, "sklearn_test.txt"))
+    path = os.path.join(save_path, "sklearn_test.txt")
+    evaluate(y_test, y_pred_sklearn, "sklearn DecisionTree – Test", save_path=path)
 
     # Матрицы ошибок
     _, axes = plt.subplots(1, 3, figsize=(15, 4))
@@ -83,10 +78,9 @@ def run_pipeline(
     plt.tight_layout()
     plt.savefig(os.path.join(save_path, "confusion_matrices.png"), dpi=300)
     plt.close()
-    logging.info("Матрицы ошибок сохранены.")
 
 
-def main() -> None:
+def main():
     SEED = 42
     np.random.seed(SEED)
 
@@ -103,7 +97,7 @@ def main() -> None:
         format="%(asctime)s - %(levelname)s - %(message)s",
     )
 
-    # Загрузка данных (Automobile dataset, OpenML id=9)
+    # Загрузка данных
     X, y, _, is_categorical = load_data()
 
     missing_mask = np.isnan(X)
@@ -111,18 +105,18 @@ def main() -> None:
     n_cont = len(is_categorical) - n_cat
     logging.info(f"Samples: {X.shape[0]}")
     logging.info(f"Features: {X.shape[1]} ({n_cont} числовых + {n_cat} категориальных)")
-    logging.info(f"Классы: survived=0 ({(y == 0).sum()}), died/euthanized=1 ({(y == 1).sum()})")
+    logging.info(f"Классы: выжил=0 ({(y == 0).sum()}), умер=1 ({(y == 1).sum()})")
     logging.info(f"Пропуски: {int(missing_mask.sum())} ({missing_mask.mean() * 100:.1f} %)")
 
-    # Разбиваем данные: 64 % train | 16 % val | 20 % test
+    # Разбиваем данные: 64%/16%/20%
     X_tv, X_test, y_tv, y_test = train_test_split(
         X, y, test_size=0.20, random_state=SEED, stratify=y)
     X_train, X_val, y_train, y_val = train_test_split(
         X_tv, y_tv, test_size=0.20, random_state=SEED, stratify=y_tv)
 
-    logging.info(f"Train: {len(y_train)} samples")
-    logging.info(f"Val: {len(y_val)} samples")
-    logging.info(f"Test: {len(y_test)} samples")
+    logging.info(f"Размер тренировочной выборки: {len(y_train)}")
+    logging.info(f"Размер валидационной выборки: {len(y_val)}")
+    logging.info(f"Размер тестовой выборки: {len(y_test)}")
 
     run_pipeline(X_train, X_val, X_test, y_train, y_val, y_test, is_categorical,
                  save_path=results_path)

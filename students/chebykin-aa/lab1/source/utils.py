@@ -6,23 +6,23 @@ from sklearn.datasets import fetch_openml
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support
 
 
-def load_data() -> tuple[np.ndarray, np.ndarray, list[str], list[bool]]:
+def load_data():
     data = fetch_openml(data_id=25, as_frame=True, parser='auto')
     X_df: pd.DataFrame = data.data.copy()
     y_series = data.target
 
-    # Бинаризуем: выжил → 0, погиб/усыплён → 1
+    # Бинаризуем метки классов
     y = (y_series.astype(float) != 1).astype(int).values
 
-    # Удаляем hospital_number — это идентификатор, а не признак
+    # Удаляем hospital_number, т.к. это не признак
     X_df = X_df.drop(columns=['hospital_number'], errors='ignore')
 
     feature_names = list(X_df.columns)
 
-    # Категориальные признаки определяем по dtype (fetch_openml помечает их как category)
+    # Категориальные признаки определяем по dtype
     is_categorical = [X_df[col].dtype.name == 'category' for col in feature_names]
 
-    # Кодируем категориальные признаки целыми числами, NaN оставляем как NaN
+    # Кодируем категориальные признаки целыми числами, NaN пропускаем
     X = np.full((len(X_df), len(feature_names)), np.nan, dtype=float)
     for i, col in enumerate(feature_names):
         if is_categorical[i]:
@@ -40,7 +40,7 @@ def evaluate(
     y_pred: np.ndarray,
     title: str = "",
     save_path: str | None = None,
-) -> float:
+):
 
     acc = accuracy_score(y_true, y_pred)
     precision, recall, f1, _ = precision_recall_fscore_support(
