@@ -21,7 +21,6 @@ class BaseModel:
 @dataclass
 class TrainedModelInfo:
     model: BaseModel
-    feature_idx: np.ndarray
     train_idx: np.ndarray
 
 
@@ -41,21 +40,14 @@ class RandomForest:
         self.n_algorithms = n_algorithms
 
 
-    def __get_random_features_idx(self, X: np.ndarray) -> np.ndarray:
-        n_features = int(np.sqrt(X.shape[1]))
-        features_to_select = np.random.choice(X.shape[1], size=n_features, replace=False)
-        return features_to_select
-
-
     def __get_bootstrap_idx(self, n_samples: int) -> np.ndarray:
         return np.random.choice(n_samples, size=n_samples, replace=True)
 
 
     def __fit_single_model(self, model_instance, X, y) -> tuple[TrainedModelInfo, list[float]]:
-        feature_idx = self.__get_random_features_idx(X)
         train_idx = self.__get_bootstrap_idx(X.shape[0])
 
-        X_train = X[train_idx][:, feature_idx]
+        X_train = X[train_idx]
         y_train = y[train_idx]
 
         model_instance.fit(X_train, y_train)
@@ -66,7 +58,7 @@ class RandomForest:
         val_mask[np.unique(train_idx)] = False
 
         if np.any(val_mask):
-            X_val = X[val_mask][:, feature_idx]
+            X_val = X[val_mask]
             y_val = y[val_mask]
             val_acc = np.mean(model_instance.predict(X_val) == y_val)
         else:
@@ -74,7 +66,6 @@ class RandomForest:
 
         info = TrainedModelInfo(
             model=model_instance,
-            feature_idx=feature_idx,
             train_idx=train_idx,
         )
         return info, [1 - train_acc, 1 - val_acc]
@@ -106,7 +97,7 @@ class RandomForest:
             if not np.any(train_mask):
                 continue
 
-            X_train = X[train_mask][:, model_info.feature_idx]
+            X_train = X[train_mask]
             preds = model_info.model.predict(X_train)
             vote_sum[train_mask] += preds
             vote_count[train_mask] += 1
@@ -127,7 +118,7 @@ class RandomForest:
             if not np.any(oob_mask):
                 continue
 
-            X_oob = X[oob_mask][:, model_info.feature_idx]
+            X_oob = X[oob_mask]
             preds = model_info.model.predict(X_oob)
             vote_sum[oob_mask] += preds
             vote_count[oob_mask] += 1
@@ -153,7 +144,7 @@ class RandomForest:
 
 
     def __get_raw_predictions(self, X: np.ndarray) -> np.ndarray:
-        return np.array([model_info.model.predict(X[:, model_info.feature_idx]) for model_info in self.trained_models])
+        return np.array([model_info.model.predict(X) for model_info in self.trained_models])
 
 
     def predict(self, X) -> np.ndarray:
