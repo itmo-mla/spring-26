@@ -50,6 +50,8 @@
      ![classification_metrics_test](./artifacts/classification_metrics_test.png)
    - Матрицы ошибок для всех моделей:
      ![confusion_matrices_test](./artifacts/confusion_matrices_test.png)
+   - ROC-кривые с AUC для всех моделей:
+     ![roc_auc_test](./artifacts/roc_auc_test.png)
 
 6. Сравнение качества работы
 

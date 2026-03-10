@@ -12,6 +12,7 @@ from sklearn.metrics import (
     precision_score,
     recall_score,
     roc_auc_score,
+    roc_curve,
 )
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
@@ -109,6 +110,25 @@ def plot_confusion_matrices(confusion_map, output_path):
     plt.close(fig)
 
 
+def plot_roc_curves(y_true, proba_map, output_path):
+    fig, ax = plt.subplots(figsize=(8, 6))
+
+    for name, y_proba in proba_map.items():
+        fpr, tpr, _ = roc_curve(y_true, y_proba)
+        auc = roc_auc_score(y_true, y_proba)
+        ax.plot(fpr, tpr, linewidth=2, label=f"{name} (AUC={auc:.3f})")
+
+    ax.plot([0, 1], [0, 1], linestyle="--", color="gray", linewidth=1)
+    ax.set_title("ROC Curves (test)")
+    ax.set_xlabel("False Positive Rate")
+    ax.set_ylabel("True Positive Rate")
+    ax.legend(loc="lower right")
+    ax.grid(alpha=0.3)
+    fig.tight_layout()
+    fig.savefig(output_path, dpi=180)
+    plt.close(fig)
+
+
 def main():
     artifacts_dir = Path(__file__).resolve().parents[1] / "artifacts"
     artifacts_dir.mkdir(parents=True, exist_ok=True)
@@ -125,14 +145,17 @@ def main():
     custom_tree = DecisionTree(criterion="gini")
     custom_tree.fit(X_train, y_train)
     custom_before_metrics, custom_before_cm = evaluate_model(custom_tree, X_test, y_test)
+    custom_before_proba = np.asarray(custom_tree.predict_proba(X_test))[:, 1]
 
     custom_tree_pruned = deepcopy(custom_tree)
     custom_tree_pruned.prune_inner(X_val, y_val)
     custom_after_metrics, custom_after_cm = evaluate_model(custom_tree_pruned, X_test, y_test)
+    custom_after_proba = np.asarray(custom_tree_pruned.predict_proba(X_test))[:, 1]
 
     sklearn_tree = DecisionTreeClassifier(criterion="gini", random_state=42)
     sklearn_tree.fit(X_train, y_train)
     sklearn_metrics, sklearn_cm = evaluate_model(sklearn_tree, X_test, y_test)
+    sklearn_proba = np.asarray(sklearn_tree.predict_proba(X_test))[:, 1]
 
     print_metrics("Custom tree (before pruning)", custom_before_metrics)
     print_metrics("Custom tree (after pruning)", custom_after_metrics)
@@ -165,9 +188,19 @@ def main():
         },
         artifacts_dir / "confusion_matrices_test.png",
     )
+    plot_roc_curves(
+        y_test,
+        {
+            "Custom before": custom_before_proba,
+            "Custom after": custom_after_proba,
+            "Sklearn": sklearn_proba,
+        },
+        artifacts_dir / "roc_auc_test.png",
+    )
 
     print(f"Saved plots: {artifacts_dir / 'classification_metrics_test.png'}")
     print(f"Saved plots: {artifacts_dir / 'confusion_matrices_test.png'}")
+    print(f"Saved plots: {artifacts_dir / 'roc_auc_test.png'}")
 
 
 if __name__ == "__main__":
