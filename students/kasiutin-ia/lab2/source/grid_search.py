@@ -8,7 +8,7 @@ from sklearn.model_selection import ParameterGrid
 @dataclass
 class GridSearchResult:
     params: dict[str, Any]
-    score: float
+    score: dict[float]
 
 
 class GridSearchEstimator:
@@ -37,20 +37,25 @@ class GridSearchEstimator:
         return estimator.compute_oob_score(X, y)
 
 
+    def _score_on_train(self, estimator: Any, X: np.ndarray, y: np.ndarray) -> float:
+        return estimator.compute_train_score(X, y)
+
+
     def fit(self, X: np.ndarray, y: np.ndarray) -> "GridSearchEstimator":
         best_score = -np.inf
 
         for params in ParameterGrid(self.param_grid):
             estimator = self._build_estimator(params)
             estimator.fit(X, y)
-            score = self._score(estimator, X, y)
+            oob_score = self._score(estimator, X, y)
+            train_score = self._score_on_train(estimator, X, y)
 
-            self.results_.append(GridSearchResult(params=params, score=score))
+            self.results_.append(GridSearchResult(params=params, score={"oob_score": oob_score, "train_score": train_score}))
 
-            if score > best_score:
-                best_score = score
+            if oob_score > best_score:
+                best_score = oob_score
                 self.best_estimator_ = estimator
                 self.best_params_ = params
-                self.best_score_ = score
+                self.best_score_ = oob_score
 
         return self

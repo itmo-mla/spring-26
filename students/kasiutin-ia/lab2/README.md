@@ -53,7 +53,7 @@ $$
 
 ```
 {
-    "n_algorithms": [10, 30, 50, 100],
+    "n_algorithms": [1, 3, 5, 10, 30, 50, 100],
     "max_depth": [3, 5, 10],
     "criterion": ["gini", "entropy"],
 }
@@ -67,14 +67,18 @@ $$
 OOB = 0.815
 ```
 
+Зависимость качества от кол-ва деревьев в ансамбле:
+
+![alt text](source/images/loss.png)
+
 # Важность признаков
 Для собственной реализации важность оценивалась через permutation importance, основанном на изменении значения OOB:
 
-![alt text](images/feature_imp_custom.png)
+![alt text](source/images/feature_imp_custom.png)
 
 Для эталонной реализации `sklearn` использовалась функция [permutation_importance](https://scikit-learn.org/stable/modules/generated/sklearn.inspection.permutation_importance.html):
 
-![alt text](images/feature_imp_sklearn.png)
+![alt text](source/images/feature_imp_sklearn.png)
 
 Результаты важности немного отличаются, но это можно объяснить тем, что метод из sklearn для оценки [не поддерживает](https://scikit-learn.org/stable/modules/model_evaluation.html#string-name-scorers:~:text=evaluation%20for%20details.-,3.4.3.1.%20String%20name%20scorers,-%23) оценку по OOB, поэтому 
 бралось значение для оценки accuracy.

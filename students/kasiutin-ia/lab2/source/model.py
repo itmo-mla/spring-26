@@ -94,6 +94,27 @@ class RandomForest:
             else:
                 print(f"{errors=}")
 
+
+    def compute_train_score(self, X, y) -> float:
+        vote_sum = np.zeros(X.shape[0], dtype=float)
+        vote_count = np.zeros(X.shape[0], dtype=int)
+
+        for model_info in self.trained_models:
+            train_mask = np.zeros(X.shape[0], dtype=bool)
+            train_mask[np.unique(model_info.train_idx)] = True
+
+            if not np.any(train_mask):
+                continue
+
+            X_train = X[train_mask][:, model_info.feature_idx]
+            preds = model_info.model.predict(X_train)
+            vote_sum[train_mask] += preds
+            vote_count[train_mask] += 1
+        
+        valid_mask = vote_count > 0
+        final_preds = np.round(vote_sum[valid_mask] / vote_count[valid_mask])
+        return np.mean(final_preds == y[valid_mask])
+    
     
     def compute_oob_score(self, X, y) -> float:
         vote_sum = np.zeros(X.shape[0], dtype=float)
