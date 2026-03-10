@@ -53,6 +53,18 @@ class DecisionTree():
         y_pred = np.asarray(self.predict(X))
         return float(np.mean(y_pred == y))
 
+    def _f1(self, X, y):
+        y_true = np.asarray(y)
+        y_pred = np.asarray(self.predict(X))
+        tp = np.sum((y_pred == 1) & (y_true == 1))
+        fp = np.sum((y_pred == 1) & (y_true == 0))
+        fn = np.sum((y_pred == 0) & (y_true == 1))
+        precision = tp / (tp + fp) if (tp + fp) > 0 else 0.0
+        recall = tp / (tp + fn) if (tp + fn) > 0 else 0.0
+        if precision + recall == 0:
+            return 0.0
+        return float(2 * precision * recall / (precision + recall))
+
     def _prune_node(self, node, X_val, y_val):
         if node is None or node.value is not None:
             return
@@ -61,6 +73,7 @@ class DecisionTree():
         self._prune_node(node.right, X_val, y_val)
 
         acc_before = self._accuracy(X_val, y_val)
+        f1_before = self._f1(X_val, y_val)
 
         old_state = (
             node.value,
@@ -78,7 +91,9 @@ class DecisionTree():
         node.feature_index = None
         node.threshold = None
 
-        if self._accuracy(X_val, y_val) < acc_before:
+        acc_after = self._accuracy(X_val, y_val)
+        f1_after = self._f1(X_val, y_val)
+        if acc_after < acc_before or f1_after < f1_before:
             (
                 node.value,
                 node.left,
