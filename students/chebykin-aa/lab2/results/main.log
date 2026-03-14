@@ -1,0 +1,53 @@
+2026-03-08 16:41:06,812 - INFO - Samples: 368
+2026-03-08 16:41:06,812 - INFO - Классы: выжил=0 (232), умер=1 (136)
+2026-03-08 16:41:06,812 - INFO - Пропуски: 1927 (20.1 %)
+2026-03-08 16:41:06,812 - INFO - Размер тренировочной выборки: 294
+2026-03-08 16:41:06,812 - INFO - Размер тестовой выборки: 74
+2026-03-08 16:41:06,812 - INFO - Grid search: 36 комбинаций
+2026-03-08 16:41:06,889 - INFO - params={'max_depth': None, 'max_features': 'sqrt', 'min_samples_split': 2, 'n_estimators': 50}  OOB=0.8537
+2026-03-08 16:41:07,041 - INFO - params={'max_depth': None, 'max_features': 'sqrt', 'min_samples_split': 2, 'n_estimators': 100}  OOB=0.8673
+2026-03-08 16:41:07,342 - INFO - params={'max_depth': None, 'max_features': 'sqrt', 'min_samples_split': 2, 'n_estimators': 200}  OOB=0.8639
+2026-03-08 16:41:07,417 - INFO - params={'max_depth': None, 'max_features': 'sqrt', 'min_samples_split': 5, 'n_estimators': 50}  OOB=0.8707
+2026-03-08 16:41:07,567 - INFO - params={'max_depth': None, 'max_features': 'sqrt', 'min_samples_split': 5, 'n_estimators': 100}  OOB=0.8844
+2026-03-08 16:41:07,874 - INFO - params={'max_depth': None, 'max_features': 'sqrt', 'min_samples_split': 5, 'n_estimators': 200}  OOB=0.8741
+2026-03-08 16:41:07,948 - INFO - params={'max_depth': None, 'max_features': 'log2', 'min_samples_split': 2, 'n_estimators': 50}  OOB=0.8741
+2026-03-08 16:41:08,098 - INFO - params={'max_depth': None, 'max_features': 'log2', 'min_samples_split': 2, 'n_estimators': 100}  OOB=0.8776
+2026-03-08 16:41:08,397 - INFO - params={'max_depth': None, 'max_features': 'log2', 'min_samples_split': 2, 'n_estimators': 200}  OOB=0.8741
+2026-03-08 16:41:08,472 - INFO - params={'max_depth': None, 'max_features': 'log2', 'min_samples_split': 5, 'n_estimators': 50}  OOB=0.8810
+2026-03-08 16:41:08,622 - INFO - params={'max_depth': None, 'max_features': 'log2', 'min_samples_split': 5, 'n_estimators': 100}  OOB=0.8776
+2026-03-08 16:41:08,921 - INFO - params={'max_depth': None, 'max_features': 'log2', 'min_samples_split': 5, 'n_estimators': 200}  OOB=0.8707
+2026-03-08 16:41:08,996 - INFO - params={'max_depth': 10, 'max_features': 'sqrt', 'min_samples_split': 2, 'n_estimators': 50}  OOB=0.8776
+2026-03-08 16:41:09,147 - INFO - params={'max_depth': 10, 'max_features': 'sqrt', 'min_samples_split': 2, 'n_estimators': 100}  OOB=0.8707
+2026-03-08 16:41:09,448 - INFO - params={'max_depth': 10, 'max_features': 'sqrt', 'min_samples_split': 2, 'n_estimators': 200}  OOB=0.8741
+2026-03-08 16:41:09,523 - INFO - params={'max_depth': 10, 'max_features': 'sqrt', 'min_samples_split': 5, 'n_estimators': 50}  OOB=0.8707
+2026-03-08 16:41:09,672 - INFO - params={'max_depth': 10, 'max_features': 'sqrt', 'min_samples_split': 5, 'n_estimators': 100}  OOB=0.8741
+2026-03-08 16:41:09,977 - INFO - params={'max_depth': 10, 'max_features': 'sqrt', 'min_samples_split': 5, 'n_estimators': 200}  OOB=0.8707
+2026-03-08 16:41:10,051 - INFO - params={'max_depth': 10, 'max_features': 'log2', 'min_samples_split': 2, 'n_estimators': 50}  OOB=0.8639
+2026-03-08 16:41:10,200 - INFO - params={'max_depth': 10, 'max_features': 'log2', 'min_samples_split': 2, 'n_estimators': 100}  OOB=0.8673
+2026-03-08 16:41:10,497 - INFO - params={'max_depth': 10, 'max_features': 'log2', 'min_samples_split': 2, 'n_estimators': 200}  OOB=0.8673
+2026-03-08 16:41:10,572 - INFO - params={'max_depth': 10, 'max_features': 'log2', 'min_samples_split': 5, 'n_estimators': 50}  OOB=0.8673
+2026-03-08 16:41:10,720 - INFO - params={'max_depth': 10, 'max_features': 'log2', 'min_samples_split': 5, 'n_estimators': 100}  OOB=0.8707
+2026-03-08 16:41:11,018 - INFO - params={'max_depth': 10, 'max_features': 'log2', 'min_samples_split': 5, 'n_estimators': 200}  OOB=0.8639
+2026-03-08 16:41:11,093 - INFO - params={'max_depth': 20, 'max_features': 'sqrt', 'min_samples_split': 2, 'n_estimators': 50}  OOB=0.8537
+2026-03-08 16:41:11,243 - INFO - params={'max_depth': 20, 'max_features': 'sqrt', 'min_samples_split': 2, 'n_estimators': 100}  OOB=0.8673
+2026-03-08 16:41:11,544 - INFO - params={'max_depth': 20, 'max_features': 'sqrt', 'min_samples_split': 2, 'n_estimators': 200}  OOB=0.8639
+2026-03-08 16:41:11,620 - INFO - params={'max_depth': 20, 'max_features': 'sqrt', 'min_samples_split': 5, 'n_estimators': 50}  OOB=0.8707
+2026-03-08 16:41:11,770 - INFO - params={'max_depth': 20, 'max_features': 'sqrt', 'min_samples_split': 5, 'n_estimators': 100}  OOB=0.8844
+2026-03-08 16:41:12,070 - INFO - params={'max_depth': 20, 'max_features': 'sqrt', 'min_samples_split': 5, 'n_estimators': 200}  OOB=0.8741
+2026-03-08 16:41:12,145 - INFO - params={'max_depth': 20, 'max_features': 'log2', 'min_samples_split': 2, 'n_estimators': 50}  OOB=0.8741
+2026-03-08 16:41:12,295 - INFO - params={'max_depth': 20, 'max_features': 'log2', 'min_samples_split': 2, 'n_estimators': 100}  OOB=0.8776
+2026-03-08 16:41:12,593 - INFO - params={'max_depth': 20, 'max_features': 'log2', 'min_samples_split': 2, 'n_estimators': 200}  OOB=0.8741
+2026-03-08 16:41:12,667 - INFO - params={'max_depth': 20, 'max_features': 'log2', 'min_samples_split': 5, 'n_estimators': 50}  OOB=0.8810
+2026-03-08 16:41:12,821 - INFO - params={'max_depth': 20, 'max_features': 'log2', 'min_samples_split': 5, 'n_estimators': 100}  OOB=0.8776
+2026-03-08 16:41:13,119 - INFO - params={'max_depth': 20, 'max_features': 'log2', 'min_samples_split': 5, 'n_estimators': 200}  OOB=0.8707
+2026-03-08 16:41:13,119 - INFO - Лучшие параметры: {'max_depth': None, 'max_features': 'sqrt', 'min_samples_split': 5, 'n_estimators': 100}  OOB=0.8844
+2026-03-08 16:41:13,274 - INFO - 
+Custom RF – Test
+Accuracy: 0.8784, Precision: 0.8813, Recall: 0.8784, F1: 0.8752
+2026-03-08 16:41:13,274 - INFO - Время обучения Custom RF: 0.151s
+2026-03-08 16:41:13,274 - INFO - OOB-точность Custom RF: 0.8844
+2026-03-08 16:41:13,500 - INFO - 
+sklearn RF – Test
+Accuracy: 0.8378, Precision: 0.8369, Recall: 0.8378, F1: 0.8347
+2026-03-08 16:41:13,500 - INFO - Время обучения sklearn RF: 0.060s
+2026-03-08 16:41:13,500 - INFO - OOB-точность sklearn RF: 0.8673
