@@ -1,0 +1,2 @@
+sklearn RF – Test
+Accuracy: 0.8378, Precision: 0.8369, Recall: 0.8378, F1: 0.8347
