@@ -16,7 +16,7 @@ warnings.filterwarnings('ignore')
 class RandomForestCustom(BaseEstimator, ClassifierMixin):
     def __init__(self, n_estimators=100, max_features='sqrt', max_depth=None,
                  min_samples_split=2, min_samples_leaf=1, bootstrap=True,
-                 oob_score=False, random_state=None):
+                 oob_score=False, random_state=None, min_weak_accuracy=0.5):
         self.n_estimators = n_estimators
         self.max_features = max_features
         self.max_depth = max_depth
@@ -25,6 +25,7 @@ class RandomForestCustom(BaseEstimator, ClassifierMixin):
         self.bootstrap = bootstrap
         self.oob_score = oob_score
         self.random_state = random_state
+        self.min_weak_accuracy = min_weak_accuracy
 
     def fit(self, X, y):
         X, y = check_X_y(X, y)
@@ -55,6 +56,16 @@ class RandomForestCustom(BaseEstimator, ClassifierMixin):
                 random_state=rng.randint(0, 1e6)
             )
             tree.fit(X[indices], y[indices])
+            train_acc = tree.score(X[indices], y[indices])
+            oob_mask = np.ones(X.shape[0], dtype=bool)
+            oob_mask[indices] = False
+            oob_idx = np.where(oob_mask)[0]
+            if len(oob_idx) > 0:
+                oob_acc = tree.score(X[oob_idx], y[oob_idx])
+            else:
+                oob_acc = 1.0
+            if train_acc < self.min_weak_accuracy or oob_acc < self.min_weak_accuracy:
+                continue
             self.trees_.append(tree)
             self.oob_indices_.append(indices)
 
