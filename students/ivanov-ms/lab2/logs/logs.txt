@@ -1,0 +1,99 @@
+Running data pipeline...
+Warning: Looks like you're using an outdated `kagglehub` version (installed: 0.3.13), please consider upgrading to the latest version (1.0.0).
+Detected 5 categorical columns: ['person_gender', 'person_education', 'person_home_ownership', 'loan_intent', 'previous_loan_defaults_on_file']
+Detected 8 numerical columns: ['person_age', 'person_income', 'person_emp_exp', 'loan_amnt', 'loan_int_rate', 'loan_percent_income', 'cb_person_cred_hist_length', 'credit_score']
+Data pipeline finished in 0.40 sec
+Data loaded: X_train=(31500, 27), X_test=(13500, 27)
+
+Starting grid search over hyperparameters using OOB score...
+New best OOB Score: 0.9293, params: {'n_estimators': 25, 'max_depth': 5, 'min_samples_split': 2, 'max_features': 'sqrt', 'random_state': 42}
+New best OOB Score: 0.9424, params: {'n_estimators': 25, 'max_depth': 5, 'min_samples_split': 2, 'max_features': 0.33, 'random_state': 42}
+New best OOB Score: 0.9483, params: {'n_estimators': 25, 'max_depth': 5, 'min_samples_split': 2, 'max_features': None, 'random_state': 42}
+New best OOB Score: 0.9504, params: {'n_estimators': 25, 'max_depth': 10, 'min_samples_split': 2, 'max_features': 'sqrt', 'random_state': 42}
+New best OOB Score: 0.9530, params: {'n_estimators': 25, 'max_depth': 10, 'min_samples_split': 2, 'max_features': 0.33, 'random_state': 42}
+New best OOB Score: 0.9540, params: {'n_estimators': 25, 'max_depth': 10, 'min_samples_split': 2, 'max_features': None, 'random_state': 42}
+New best OOB Score: 0.9541, params: {'n_estimators': 25, 'max_depth': 10, 'min_samples_split': 5, 'max_features': None, 'random_state': 42}
+New best OOB Score: 0.9546, params: {'n_estimators': 25, 'max_depth': 15, 'min_samples_split': 2, 'max_features': 0.33, 'random_state': 42}
+New best OOB Score: 0.9551, params: {'n_estimators': 50, 'max_depth': 15, 'min_samples_split': 2, 'max_features': 'sqrt', 'random_state': 42}
+New best OOB Score: 0.9561, params: {'n_estimators': 50, 'max_depth': 15, 'min_samples_split': 2, 'max_features': 0.33, 'random_state': 42}
+New best OOB Score: 0.9565, params: {'n_estimators': 100, 'max_depth': 15, 'min_samples_split': 2, 'max_features': 0.33, 'random_state': 42}
+New best OOB Score: 0.9565, params: {'n_estimators': 100, 'max_depth': 15, 'min_samples_split': 10, 'max_features': 0.33, 'random_state': 42}
+New best OOB Score: 0.9565, params: {'n_estimators': 100, 'max_depth': None, 'min_samples_split': 2, 'max_features': 0.33, 'random_state': 42}
+New best OOB Score: 0.9572, params: {'n_estimators': 100, 'max_depth': None, 'min_samples_split': 5, 'max_features': 0.33, 'random_state': 42}
+New best OOB Score: 0.9574, params: {'n_estimators': 200, 'max_depth': None, 'min_samples_split': 5, 'max_features': 0.33, 'random_state': 42}
+
+Best OOB Score: 0.9574
+Best parameters: {'n_estimators': 200, 'max_depth': None, 'min_samples_split': 5, 'max_features': 0.33, 'random_state': 42}
+
+Training Custom Random Forest...
+Model trained in 3.505 sec
+Evaluation:
+  Accuracy: 0.8392
+  Precision: 0.9816
+  Recall: 0.6737
+  F1-Score: 0.7990
+  AUC-ROC: 0.9715
+  OOB Score: 0.9572
+
+Training Sklearn Random Forest...
+Model trained in 3.095 sec
+Evaluation:
+  Accuracy: 0.8438
+  Precision: 0.9810
+  Recall: 0.6840
+  F1-Score: 0.8060
+  AUC-ROC: 0.9719
+  OOB Score: 0.9563
+
+============================================================
+COMPARING DECISION TREE IMPLEMENTATIONS
+============================================================
+
+Metrics comparison:
+       Method  Test size  Accuracy  Precision    Recall        F1   ROC AUC
+0   Custom RF      13500  0.839185   0.981578  0.673743  0.799037  0.971518
+1  Sklearn RF      13500  0.843778   0.980972  0.684046  0.806033  0.971950
+
+Top 10 Feature Importances (Custom RF):
+  Feature loan_percent_income: 0.2004
+  Feature loan_int_rate: 0.1597
+  Feature person_income: 0.1210
+  Feature previous_loan_defaults_on_file_Yes: 0.0924
+  Feature previous_loan_defaults_on_file_No: 0.0875
+  Feature person_home_ownership_RENT: 0.0538
+  Feature credit_score: 0.0532
+  Feature loan_amnt: 0.0495
+  Feature person_home_ownership_MORTGAGE: 0.0266
+  Feature person_age: 0.0249
+
+Computing OOB permutation feature importance...
+
+Top 10 OOB^j Permutation Importances:
+  Feature loan_percent_income: 0.0382
+  Feature loan_int_rate: 0.0274
+  Feature previous_loan_defaults_on_file_Yes: 0.0240
+  Feature previous_loan_defaults_on_file_No: 0.0209
+  Feature person_income: 0.0179
+  Feature person_home_ownership_RENT: 0.0150
+  Feature loan_intent_HOMEIMPROVEMENT: 0.0056
+  Feature credit_score: 0.0041
+  Feature loan_intent_DEBTCONSOLIDATION: 0.0030
+  Feature person_home_ownership_MORTGAGE: 0.0024
+
+Generating learning curve...
+  n_estimators = 1
+  n_estimators = 5
+  n_estimators = 10
+  n_estimators = 25
+  n_estimators = 50
+  n_estimators = 100
+  n_estimators = 150
+  n_estimators = 200
+  n_estimators = 250
+  n_estimators = 300
+  n_estimators = 350
+  n_estimators = 400
+  n_estimators = 450
+  n_estimators = 500
+
+All done!
