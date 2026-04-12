@@ -1,0 +1,77 @@
+Подбор гиперпараметров по OOB...
+Лучшие параметры: {'max_depth': 5, 'max_features': 'sqrt', 'min_samples_split': 2, 'n_estimators': 100}
+Лучший OOB score: 0.8383
+Custom:
+  Время обучения: 0.0742 сек
+  OOB score: 0.8383
+  Accuracy: 0.9010
+  Feature importances (OOB^j):
+    age: 0.0066
+    sex: 0.0033
+    cp: 0.0297
+    trestbps: -0.0033
+    chol: 0.0132
+    fbs: -0.0066
+    restecg: 0.0099
+    thalach: 0.0099
+    exang: 0.0264
+    oldpeak: 0.0000
+    slope: 0.0099
+    ca: 0.0264
+    thal: 0.0429
+sklearn реализация:
+  Время обучения: 0.1011 сек
+  OOB score: 0.8383
+  Accuracy: 0.9274
+  Feature importances (impurity):
+    age: 0.0726
+    sex: 0.0346
+    cp: 0.1599
+    trestbps: 0.0473
+    chol: 0.0498
+    fbs: 0.0048
+    restecg: 0.0142
+    thalach: 0.1298
+    exang: 0.0717
+    oldpeak: 0.1097
+    slope: 0.0594
+    ca: 0.1169
+    thal: 0.1292
+sklearn permutation_importance:
+    age: 0.0112
+    sex: 0.0073
+    cp: 0.0538
+    trestbps: 0.0125
+    chol: 0.0092
+    fbs: 0.0030
+    restecg: 0.0073
+    thalach: 0.0188
+    exang: 0.0099
+    oldpeak: 0.0267
+    slope: 0.0122
+    ca: 0.0472
+    thal: 0.0393
+
+Сравнение:
+Метрика                        custom               sklearn             
+------------------------------------------------------------------------
+Accuracy                       0.9010               0.9274              
+OOB score                      0.8383               0.8383              
+Время обучения (сек)           0.0742               0.1011              
+
+Сравнение feature importances:
+Признак         OOB^j (custom)       sklearn permutation 
+---------------------------------------------------------
+age             0.0066               0.0112              
+sex             0.0033               0.0073              
+cp              0.0297               0.0538              
+trestbps        -0.0033              0.0125              
+chol            0.0132               0.0092              
+fbs             -0.0066              0.0030              
+restecg         0.0099               0.0073              
+thalach         0.0099               0.0188              
+exang           0.0264               0.0099              
+oldpeak         0.0000               0.0267              
+slope           0.0099               0.0122              
+ca              0.0264               0.0472              
+thal            0.0429               0.0393              
