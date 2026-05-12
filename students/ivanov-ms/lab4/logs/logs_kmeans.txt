@@ -1,0 +1,25 @@
+Running data pipeline...
+Detected 0 categorical columns: []
+Detected 13 numerical columns: ['Alcohol', 'Malic acid', 'Ash', 'Alcalinity of ash', 'Magnesium', 'Total phenols', 'Flavanoids', 'Nonflavanoid phenols', 'Proanthocyanins', 'Color intensity', 'Hue', 'OD280/OD315 of diluted wines', 'Proline ']
+Data pipeline finished in 0.35 sec
+Data loaded: X_train=(125, 13), X_test=(53, 13)
+
+============================================================
+TRAINING CUSTOM GMM
+============================================================
+Custom GB: GaussianMixtureModel[fitted=False; n_components=3; max_iter=100; tol=0.0001]
+Model trained in 0.010 sec
+Evaluation:
+ Log-likelihood: -796.17
+
+============================================================
+TRAINING SKLEARN GAUSSIAN MIXTURE
+============================================================
+Sklearn GB: GaussianMixture(n_components=3, random_state=42, tol=0.0001)
+Model trained in 0.052 sec
+Evaluation:
+ Log-likelihood: -778.66
+
+============================================================
+PIPELINE COMPLETE
+============================================================
