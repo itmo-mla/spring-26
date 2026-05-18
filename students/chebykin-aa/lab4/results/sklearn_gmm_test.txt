@@ -1,0 +1,2 @@
+sklearn GMM
+Log-likelihood (train): -14.4281, Log-likelihood (test): -14.0458, BIC: 1297.98, AIC: 1171.30

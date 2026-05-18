@@ -1,0 +1,11 @@
+2026-04-14 23:45:52,027 - INFO - Датасет: 178 объектов, 13 признаков
+2026-04-14 23:45:52,028 - INFO - Train: 142, Test: 36
+2026-04-14 23:45:52,029 - INFO - Custom GMM: converged=True, n_iter=7, time=0.001s
+2026-04-14 23:45:52,044 - INFO - sklearn GMM: converged=True, n_iter=4, time=0.015s
+2026-04-14 23:45:52,044 - INFO - 
+Custom GMM
+Log-likelihood (train): -14.4278, Log-likelihood (test): -14.0902, BIC: 1301.18, AIC: 1174.50
+2026-04-14 23:45:52,045 - INFO - 
+sklearn GMM
+Log-likelihood (train): -14.4281, Log-likelihood (test): -14.0458, BIC: 1297.98, AIC: 1171.30
+2026-04-14 23:45:52,384 - INFO - Done.

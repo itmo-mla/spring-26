@@ -1,0 +1,4 @@
+Веса компонент:
+  0: custom=0.3045, sklearn=0.3371
+  1: custom=0.3343, sklearn=0.3042
+  2: custom=0.3612, sklearn=0.3587

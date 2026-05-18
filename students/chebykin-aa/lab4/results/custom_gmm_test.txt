@@ -1,0 +1,2 @@
+Custom GMM
+Log-likelihood (train): -14.4278, Log-likelihood (test): -14.0902, BIC: 1301.18, AIC: 1174.50
