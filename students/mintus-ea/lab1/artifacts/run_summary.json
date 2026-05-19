@@ -1,0 +1,37 @@
+{
+  "dataset": "UCI Adult Income",
+  "sample_size": 6000,
+  "train_size": 3600,
+  "validation_size": 1200,
+  "test_size": 1200,
+  "missing_values": {
+    "occupation": 1843,
+    "workclass": 1836,
+    "native-country": 583,
+    "age": 0,
+    "education-num": 0,
+    "capital-gain": 0,
+    "capital-loss": 0,
+    "hours-per-week": 0,
+    "education": 0,
+    "marital-status": 0,
+    "relationship": 0,
+    "race": 0,
+    "sex": 0
+  },
+  "class_balance": {
+    "0": 0.7591904425539756,
+    "1": 0.2408095574460244
+  },
+  "before_pruning": {
+    "depth": 8,
+    "nodes": 81,
+    "leaves": 41
+  },
+  "after_pruning": {
+    "depth": 6,
+    "nodes": 21,
+    "leaves": 11
+  },
+  "pruned_internal_nodes": 30
+}

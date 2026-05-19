@@ -1,0 +1,25 @@
+if marital-status == Married-civ-spouse (gain=0.0697, missing left/right=0.46/0.54)
+  yes -> if education-num <= 12.500 (gain=0.0626, missing left/right=0.71/0.29)
+  yes ->   yes -> if capital-gain <= 5095.500 (gain=0.0435, missing left/right=0.95/0.05)
+  yes ->   yes ->   yes -> if education-num <= 8.500 (gain=0.0134, missing left/right=0.18/0.82)
+  yes ->   yes ->   yes ->   yes -> leaf...: class=0, p=0.876, weight=201.0
+  yes ->   yes ->   yes ->   no  -> leaf...: class=0, p=0.663, weight=908.0
+  yes ->   yes ->   no  -> if age <= 57.500 (gain=0.0016, missing left/right=0.72/0.28)
+  yes ->   yes ->   no  ->   yes -> leaf: class=1, p=1.000, weight=41.0
+  yes ->   yes ->   no  ->   no  -> leaf: class=1, p=0.938, weight=16.0
+  yes ->   no  -> if capital-gain <= 5095.500 (gain=0.0299, missing left/right=0.83/0.17)
+  yes ->   no  ->   yes -> if capital-loss <= 1794.000 (gain=0.0210, missing left/right=0.90/0.10)
+  yes ->   no  ->   yes ->   yes -> leaf...: class=1, p=0.632, weight=353.0
+  yes ->   no  ->   yes ->   no  -> leaf: class=1, p=0.974, weight=39.0
+  yes ->   no  ->   no  -> if age <= 50.500 (gain=0.0009, missing left/right=0.76/0.24)
+  yes ->   no  ->   no  ->   yes -> leaf: class=1, p=1.000, weight=63.0
+  yes ->   no  ->   no  ->   no  -> leaf: class=1, p=0.950, weight=20.0
+  no  -> if capital-gain <= 8028.500 (gain=0.0196, missing left/right=0.99/0.01)
+  no  ->   yes -> if education-num <= 13.500 (gain=0.0074, missing left/right=0.94/0.06)
+  no  ->   yes ->   yes -> if hours-per-week <= 48.000 (gain=0.0025, missing left/right=0.86/0.14)
+  no  ->   yes ->   yes ->   yes -> leaf...: class=0, p=0.971, weight=1568.0
+  no  ->   yes ->   yes ->   no  -> leaf...: class=0, p=0.868, weight=250.0
+  no  ->   yes ->   no  -> if hours-per-week <= 44.500 (gain=0.0293, missing left/right=0.60/0.40)
+  no  ->   yes ->   no  ->   yes -> leaf...: class=0, p=0.800, weight=70.0
+  no  ->   yes ->   no  ->   no  -> leaf...: class=0, p=0.553, weight=47.0
+  no  ->   no  -> leaf: class=1, p=0.958, weight=24.0
