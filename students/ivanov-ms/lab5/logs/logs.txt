@@ -1,0 +1,116 @@
+> python source/main.py --n-processes 8 --slim-l1 0.3 --slim-l2 0.2 --slim-positive --als-factors 50 --als-l2 0.5 --als-epochs 50 --als-batch-size 64 --with-plotting
+
+Running data pipeline...
+Warning: Looks like you're using an outdated `kagglehub` version (installed: 0.3.13), please consider upgrading to the latest version (1.0.0).
+  Filter train and test, shapes before - train=2,714,111, test=1,163,190
+  Filtered train and test, shapes after - train=213,304, test=53,290
+Data pipeline finished in 7.83 sec
+Data loaded: X_train=(213304, 4), X_test=(53290, 4)
+Create matrices
+Train matrix created: (2737, 879)
+
+============================================================
+TRAINING CUSTOM SLIM
+============================================================
+Custom SLIM: SLIM[fitted=False,l1_coef=0.3,l2_coef=0.2,train_kwargs={'max_iter': 500, 'tol': 1e-05, 'positive': True, 'selection': 'cyclic', 'use_mask': False, 'sample_perc': 1}]
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 879/879 [00:06<00:00, 142.62it/s]
+Model trained in 6.928 sec
+Evaluation:
+ Precision@10: 0.1997
+ Recall@10: 0.1324
+ NDCG@10: 0.2843
+ RMSE@10: 3.6223
+
+============================================================
+TRAINING CUSTOM ALS
+============================================================
+Custom ALS: ALS[fitted=False,n_factors=50,lambda_coef=0.5]
+Epoch 1/50, Loss: 3.5385, Loss with reg.: 431596.1252
+Epoch 2/50, Loss: 5.5073, Loss with reg.: 17601.9546
+Epoch 3/50, Loss: 6.0891, Loss with reg.: 14823.9939
+Epoch 4/50, Loss: 6.3033, Loss with reg.: 14117.8752
+Epoch 5/50, Loss: 6.4252, Loss with reg.: 13771.4224
+Epoch 6/50, Loss: 6.5112, Loss with reg.: 13560.4063
+Epoch 7/50, Loss: 6.5784, Loss with reg.: 13413.5752
+Epoch 8/50, Loss: 6.6342, Loss with reg.: 13304.3800
+Epoch 9/50, Loss: 6.6826, Loss with reg.: 13220.1219
+Epoch 10/50, Loss: 6.7250, Loss with reg.: 13152.9391
+Epoch 11/50, Loss: 6.7622, Loss with reg.: 13097.7637
+Epoch 12/50, Loss: 6.7953, Loss with reg.: 13051.4518
+Epoch 13/50, Loss: 6.8250, Loss with reg.: 13012.0829
+Epoch 14/50, Loss: 6.8521, Loss with reg.: 12978.4176
+Epoch 15/50, Loss: 6.8771, Loss with reg.: 12949.5705
+Epoch 16/50, Loss: 6.9003, Loss with reg.: 12924.8485
+Epoch 17/50, Loss: 6.9220, Loss with reg.: 12903.6539
+Epoch 18/50, Loss: 6.9423, Loss with reg.: 12885.4348
+Epoch 19/50, Loss: 6.9614, Loss with reg.: 12869.6770
+Epoch 20/50, Loss: 6.9793, Loss with reg.: 12855.9106
+Epoch 21/50, Loss: 6.9961, Loss with reg.: 12843.7150
+Epoch 22/50, Loss: 7.0119, Loss with reg.: 12832.7258
+Epoch 23/50, Loss: 7.0267, Loss with reg.: 12822.6493
+Epoch 24/50, Loss: 7.0407, Loss with reg.: 12813.2726
+Epoch 25/50, Loss: 7.0538, Loss with reg.: 12804.4568
+Epoch 26/50, Loss: 7.0661, Loss with reg.: 12796.1173
+Epoch 27/50, Loss: 7.0777, Loss with reg.: 12788.2017
+Epoch 28/50, Loss: 7.0887, Loss with reg.: 12780.6727
+Epoch 29/50, Loss: 7.0990, Loss with reg.: 12773.4985
+Epoch 30/50, Loss: 7.1088, Loss with reg.: 12766.6490
+Epoch 31/50, Loss: 7.1181, Loss with reg.: 12760.0963
+Epoch 32/50, Loss: 7.1269, Loss with reg.: 12753.8166
+Epoch 33/50, Loss: 7.1353, Loss with reg.: 12747.7921
+Epoch 34/50, Loss: 7.1432, Loss with reg.: 12742.0112
+Epoch 35/50, Loss: 7.1508, Loss with reg.: 12736.4682
+Epoch 36/50, Loss: 7.1580, Loss with reg.: 12731.1624
+Epoch 37/50, Loss: 7.1648, Loss with reg.: 12726.0967
+Epoch 38/50, Loss: 7.1714, Loss with reg.: 12721.2770
+Epoch 39/50, Loss: 7.1777, Loss with reg.: 12716.7104
+Epoch 40/50, Loss: 7.1838, Loss with reg.: 12712.4045
+Epoch 41/50, Loss: 7.1897, Loss with reg.: 12708.3656
+Epoch 42/50, Loss: 7.1953, Loss with reg.: 12704.5978
+Epoch 43/50, Loss: 7.2008, Loss with reg.: 12701.1023
+Epoch 44/50, Loss: 7.2062, Loss with reg.: 12697.8766
+Epoch 45/50, Loss: 7.2114, Loss with reg.: 12694.9144
+Epoch 46/50, Loss: 7.2164, Loss with reg.: 12692.2058
+Epoch 47/50, Loss: 7.2214, Loss with reg.: 12689.7373
+Epoch 48/50, Loss: 7.2262, Loss with reg.: 12687.4925
+Epoch 49/50, Loss: 7.2309, Loss with reg.: 12685.4533
+Epoch 50/50, Loss: 7.2355, Loss with reg.: 12683.6003
+Model trained in 11.547 sec
+Evaluation:
+ Precision@10: 0.0891
+ Recall@10: 0.0562
+ NDCG@10: 0.1213
+ RMSE@10: 3.8216
+
+============================================================
+TRAINING REFERENCE SLIM
+============================================================
+Using Coordinate Descent!
+Learning takes 1.813 secs.
+Model trained in 1.933 sec
+Evaluation:
+ Precision@10: 0.0163
+ Recall@10: 0.0094
+ NDCG@10: 0.0200
+ RMSE@10: 4.0655
+
+============================================================
+TRAINING REFERENCE ALS
+============================================================
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 50/50 [00:01<00:00, 32.12it/s, loss=0.0553]
+Model trained in 1.570 sec
+Evaluation:
+ Precision@10: 0.1601
+ Recall@10: 0.1036
+ NDCG@10: 0.2195
+ RMSE@10: 3.9373
+All metrics compare:
+                Precision@10  Recall@10   NDCG@10   RMSE@10
+Custom SLIM         0.199744   0.132366  0.284273  3.622275
+Custom ALS          0.089076   0.056204  0.121300  3.821573
+Reference SLIM      0.016332   0.009419  0.020026  4.065520
+Reference ALS       0.160139   0.103618  0.219521  3.937341
+
+============================================================
+PIPELINE COMPLETE
+============================================================
