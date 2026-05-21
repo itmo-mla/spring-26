@@ -15,18 +15,11 @@ class RandomForest:
         n_samples = X.shape[0]
         indices = np.random.choice(n_samples, size=n_samples, replace=True)
         return X[indices], y[indices], indices
-    def _feature_subset(self, n_features):
-        if self.max_features == 'sqrt':
-            return max(1, int(np.sqrt(n_features)))
-        elif self.max_features == 'log2':
-            return max(1, int(np.log2(n_features)))
-        else:
-            return n_features
     def _oob_predict_single(self, x, i):
         oob_predictions = []
-        for tree, features,indices in self.trees:
+        for tree, indices in self.trees:
             if i not in indices:
-                oob_predictions.append(tree.predict(x[features].reshape(1, -1))[0])
+                oob_predictions.append(tree.predict(x.reshape(1, -1))[0])
         if oob_predictions:
             return np.bincount(oob_predictions).argmax()
         else:
@@ -47,20 +40,22 @@ class RandomForest:
         return (preds==y).mean()
         
 
-
-        
     def fit(self, X, y):
         np.random.seed(self.random_state)
         self.trees = []
         self.feature_importances_ = None
-        n_features = X.shape[1]
         for _ in range(self.n_estimators):
             X_sample, y_sample, indices = self._bootstrap_sample(X, y)
-            feature_subset_size = self._feature_subset(n_features)
-            features = np.random.choice(n_features, size=feature_subset_size, replace=False)
-            tree = DecisionTreeClassifier(max_depth=self.max_depth, random_state=self.random_state, min_samples_split=self.min_samples_split)
-            tree.fit(X_sample[:, features], y_sample)
-            self.trees.append((tree, features, indices))
+            tree = DecisionTreeClassifier(
+                max_depth=self.max_depth,
+                random_state=self.random_state,
+                min_samples_split=self.min_samples_split,
+                max_features=self.max_features
+            )
+            tree.fit(X_sample, y_sample)
+            oob_indices = np.setdiff1d(np.arange(len(X)), indices)
+            if len(oob_indices) == 0 or (tree.predict(X[oob_indices]) == y[oob_indices]).mean() > 0.5:
+                self.trees.append((tree, indices))
 
     def oob_feature_importance(self, X, y, random_state=None):
         baseline = self.oob_score(X, y)
@@ -82,6 +77,6 @@ class RandomForest:
         return importances
 
     def predict(self, X):
-        tree_preds = np.array([tree.predict(X[:, features]) for tree, features, _ in self.trees])
+        tree_preds = np.array([tree.predict(X) for tree, _ in self.trees])
         return np.apply_along_axis(lambda x: np.bincount(x).argmax(), axis=0, arr=tree_preds)
     
