@@ -1,0 +1,3 @@
+Время обучения Custom GB  (5-fold CV): 0.299s
+Время обучения sklearn GB (5-fold CV): 0.281s
+Соотношение (custom/sklearn): 1.1x

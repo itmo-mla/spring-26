@@ -1,0 +1,8 @@
+K = 3
+
+Время обучения Custom GMM : 0.001s
+Время обучения sklearn GMM: 0.015s
+Соотношение (custom/sklearn): 0.1x
+
+Custom GMM:  LL(train)=-14.4278, LL(test)=-14.0902, BIC=1301.18, AIC=1174.50
+sklearn GMM: LL(train)=-14.4281, LL(test)=-14.0458, BIC=1297.98, AIC=1171.30
