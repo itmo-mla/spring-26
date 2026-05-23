@@ -1,0 +1,4 @@
+SVDRef (TruncatedSVD)
+RMSE: 2.6404
+NDCG@10: 0.3751
+Время обучения: 0.36s
