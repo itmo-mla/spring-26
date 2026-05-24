@@ -1,0 +1,22 @@
+# Local dataset files
+data/
+
+# Generated machine-readable experiment outputs
+results/*.json
+results/*.csv
+results/*.md
+
+# Python/cache artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS/editor noise
+.DS_Store
+.idea/
+.vscode/
