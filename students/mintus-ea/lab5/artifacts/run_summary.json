@@ -1,0 +1,23 @@
+{
+  "dataset": {
+    "name": "20 Newsgroups subset",
+    "source": "sklearn.datasets.fetch_20newsgroups",
+    "documents": 360,
+    "topics": 6,
+    "terms": 180,
+    "density": 0.06074074074074074,
+    "rating": "TF-IDF(document, term)"
+  },
+  "train_density": 0.049429012345679015,
+  "heldout_entries": 733,
+  "parameters": {
+    "random_state": 42,
+    "docs_per_category": 60,
+    "max_features": 180,
+    "test_fraction": 0.2,
+    "lsa_components": 20,
+    "ndcg_k": 10,
+    "slim_l1": 0.002,
+    "slim_l2": 0.02
+  }
+}

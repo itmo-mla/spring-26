@@ -1,0 +1,193 @@
+model,document,topic,rank,term,score
+Custom SLIM,0,comp.graphics,1,info,0.11393523387488204
+Custom SLIM,0,comp.graphics,2,things,0.09333936924649226
+Custom SLIM,0,comp.graphics,3,know,0.08689797156922097
+Custom SLIM,0,comp.graphics,4,ll,0.06588575117907138
+Custom SLIM,0,comp.graphics,5,looking,0.06278708941954694
+Custom SLIM,0,comp.graphics,6,doing,0.05825519543788426
+Custom SLIM,0,comp.graphics,7,news,0.05400761480947042
+Custom SLIM,0,comp.graphics,8,graphics,0.050383917635469164
+Custom SLIM,2,talk.politics.misc,1,years,0.10328487028058045
+Custom SLIM,2,talk.politics.misc,2,edu,0.10206432433469008
+Custom SLIM,2,talk.politics.misc,3,government,0.09776299417702831
+Custom SLIM,2,talk.politics.misc,4,need,0.09693744156562518
+Custom SLIM,2,talk.politics.misc,5,come,0.09130847261284611
+Custom SLIM,2,talk.politics.misc,6,graphics,0.07716013258536816
+Custom SLIM,2,talk.politics.misc,7,good,0.07455683865058926
+Custom SLIM,2,talk.politics.misc,8,mail,0.06617362817309203
+Custom SLIM,3,rec.sport.baseball,1,available,0.15480408340192306
+Custom SLIM,3,rec.sport.baseball,2,control,0.07117100840946546
+Custom SLIM,3,rec.sport.baseball,3,try,0.06467238973349436
+Custom SLIM,3,rec.sport.baseball,4,information,0.05699829824670905
+Custom SLIM,3,rec.sport.baseball,5,doing,0.04551678881486478
+Custom SLIM,3,rec.sport.baseball,6,does,0.043931088627561864
+Custom SLIM,3,rec.sport.baseball,7,know,0.04325092559850463
+Custom SLIM,3,rec.sport.baseball,8,tell,0.03981666925079413
+Custom SLIM,4,sci.space,1,does,0.11737679504978067
+Custom SLIM,4,sci.space,2,like,0.09440170383804045
+Custom SLIM,4,sci.space,3,today,0.09367880227110414
+Custom SLIM,4,sci.space,4,believe,0.09203098142746174
+Custom SLIM,4,sci.space,5,bad,0.08978791729929507
+Custom SLIM,4,sci.space,6,systems,0.06861774231353349
+Custom SLIM,4,sci.space,7,ve,0.06593660451159104
+Custom SLIM,4,sci.space,8,state,0.06440348897870667
+Custom SLIM,5,sci.med,1,images,0.10747331948939731
+Custom SLIM,5,sci.med,2,people,0.10551515159306626
+Custom SLIM,5,sci.med,3,post,0.09691545773080526
+Custom SLIM,5,sci.med,4,com,0.0822728812750893
+Custom SLIM,5,sci.med,5,come,0.07637914796794153
+Custom SLIM,5,sci.med,6,really,0.0752919800928718
+Custom SLIM,5,sci.med,7,doing,0.0736367761993782
+Custom SLIM,5,sci.med,8,good,0.07151129253753713
+Custom SLIM,8,rec.autos,1,let,0.10866656512673356
+Custom SLIM,8,rec.autos,2,car,0.10829297972084699
+Custom SLIM,8,rec.autos,3,mr,0.09004831775564942
+Custom SLIM,8,rec.autos,4,know,0.08873234803548283
+Custom SLIM,8,rec.autos,5,help,0.07278276447222089
+Custom SLIM,8,rec.autos,6,power,0.06241961008597237
+Custom SLIM,8,rec.autos,7,law,0.05464718618186895
+Custom SLIM,8,rec.autos,8,year,0.05198100257514403
+Sklearn ElasticNet SLIM,0,comp.graphics,1,info,0.09968674792195323
+Sklearn ElasticNet SLIM,0,comp.graphics,2,know,0.08131053823946409
+Sklearn ElasticNet SLIM,0,comp.graphics,3,things,0.05299065989261706
+Sklearn ElasticNet SLIM,0,comp.graphics,4,looking,0.05029948024667404
+Sklearn ElasticNet SLIM,0,comp.graphics,5,graphics,0.04966633170914197
+Sklearn ElasticNet SLIM,0,comp.graphics,6,post,0.03449022169922682
+Sklearn ElasticNet SLIM,0,comp.graphics,7,ll,0.033744734610089505
+Sklearn ElasticNet SLIM,0,comp.graphics,8,doing,0.026882464292337538
+Sklearn ElasticNet SLIM,2,talk.politics.misc,1,edu,0.07661685054199859
+Sklearn ElasticNet SLIM,2,talk.politics.misc,2,government,0.051892928445263276
+Sklearn ElasticNet SLIM,2,talk.politics.misc,3,good,0.04977093447939458
+Sklearn ElasticNet SLIM,2,talk.politics.misc,4,just,0.04456245917859289
+Sklearn ElasticNet SLIM,2,talk.politics.misc,5,certainly,0.03932328917880288
+Sklearn ElasticNet SLIM,2,talk.politics.misc,6,believe,0.036707325582630033
+Sklearn ElasticNet SLIM,2,talk.politics.misc,7,like,0.03211128264820335
+Sklearn ElasticNet SLIM,2,talk.politics.misc,8,mr,0.02897607068663331
+Sklearn ElasticNet SLIM,3,rec.sport.baseball,1,available,0.10056091720665868
+Sklearn ElasticNet SLIM,3,rec.sport.baseball,2,know,0.04085010122689623
+Sklearn ElasticNet SLIM,3,rec.sport.baseball,3,control,0.03873471588754994
+Sklearn ElasticNet SLIM,3,rec.sport.baseball,4,try,0.035656998222577056
+Sklearn ElasticNet SLIM,3,rec.sport.baseball,5,information,0.030671709640320653
+Sklearn ElasticNet SLIM,3,rec.sport.baseball,6,does,0.028155638483361646
+Sklearn ElasticNet SLIM,3,rec.sport.baseball,7,need,0.02100404741310005
+Sklearn ElasticNet SLIM,3,rec.sport.baseball,8,just,0.018777860745934214
+Sklearn ElasticNet SLIM,4,sci.space,1,does,0.07450078182427976
+Sklearn ElasticNet SLIM,4,sci.space,2,today,0.06342307607615803
+Sklearn ElasticNet SLIM,4,sci.space,3,believe,0.058523078470743145
+Sklearn ElasticNet SLIM,4,sci.space,4,bad,0.052603401237415116
+Sklearn ElasticNet SLIM,4,sci.space,5,like,0.04974246813989903
+Sklearn ElasticNet SLIM,4,sci.space,6,systems,0.03987613009989277
+Sklearn ElasticNet SLIM,4,sci.space,7,state,0.03597933243706431
+Sklearn ElasticNet SLIM,4,sci.space,8,don,0.03404119814600037
+Sklearn ElasticNet SLIM,5,sci.med,1,people,0.07367930555619638
+Sklearn ElasticNet SLIM,5,sci.med,2,images,0.06174271497748962
+Sklearn ElasticNet SLIM,5,sci.med,3,post,0.05611429167506827
+Sklearn ElasticNet SLIM,5,sci.med,4,think,0.05516112629906104
+Sklearn ElasticNet SLIM,5,sci.med,5,really,0.05492320691500161
+Sklearn ElasticNet SLIM,5,sci.med,6,good,0.05080875033218041
+Sklearn ElasticNet SLIM,5,sci.med,7,com,0.048883585779629674
+Sklearn ElasticNet SLIM,5,sci.med,8,problem,0.048078442140308084
+Sklearn ElasticNet SLIM,8,rec.autos,1,car,0.10663472182637215
+Sklearn ElasticNet SLIM,8,rec.autos,2,let,0.08020356694912989
+Sklearn ElasticNet SLIM,8,rec.autos,3,know,0.07766794201698428
+Sklearn ElasticNet SLIM,8,rec.autos,4,mr,0.07045044989459008
+Sklearn ElasticNet SLIM,8,rec.autos,5,help,0.05347408851154342
+Sklearn ElasticNet SLIM,8,rec.autos,6,power,0.05191544838696772
+Sklearn ElasticNet SLIM,8,rec.autos,7,year,0.050791806504361214
+Sklearn ElasticNet SLIM,8,rec.autos,8,just,0.04860243075023476
+Custom LSA,0,comp.graphics,1,info,0.1743100008972873
+Custom LSA,0,comp.graphics,2,looking,0.08354427870406324
+Custom LSA,0,comp.graphics,3,post,0.058640337499152234
+Custom LSA,0,comp.graphics,4,able,0.057057493186945224
+Custom LSA,0,comp.graphics,5,know,0.05559429907706465
+Custom LSA,0,comp.graphics,6,nasa,0.05318723510701344
+Custom LSA,0,comp.graphics,7,let,0.04681005403436765
+Custom LSA,0,comp.graphics,8,lot,0.046662129523260716
+Custom LSA,2,talk.politics.misc,1,good,0.05777758534689751
+Custom LSA,2,talk.politics.misc,2,let,0.04687243271113914
+Custom LSA,2,talk.politics.misc,3,power,0.04517253491094655
+Custom LSA,2,talk.politics.misc,4,mr,0.03775353158266126
+Custom LSA,2,talk.politics.misc,5,government,0.03745785739476021
+Custom LSA,2,talk.politics.misc,6,edu,0.03248101432718805
+Custom LSA,2,talk.politics.misc,7,want,0.03148906710211241
+Custom LSA,2,talk.politics.misc,8,able,0.02934512328564345
+Custom LSA,3,rec.sport.baseball,1,did,0.06295891512912681
+Custom LSA,3,rec.sport.baseball,2,time,0.059150401360311494
+Custom LSA,3,rec.sport.baseball,3,post,0.0384255607703134
+Custom LSA,3,rec.sport.baseball,4,ll,0.038261187649664664
+Custom LSA,3,rec.sport.baseball,5,know,0.03768323464286631
+Custom LSA,3,rec.sport.baseball,6,come,0.0376224784897961
+Custom LSA,3,rec.sport.baseball,7,available,0.0345317708042272
+Custom LSA,3,rec.sport.baseball,8,com,0.0333230771824228
+Custom LSA,4,sci.space,1,mail,0.11571150265006781
+Custom LSA,4,sci.space,2,does,0.0986991452141903
+Custom LSA,4,sci.space,3,like,0.09009409837469727
+Custom LSA,4,sci.space,4,year,0.08801734809633203
+Custom LSA,4,sci.space,5,did,0.0766899205729258
+Custom LSA,4,sci.space,6,question,0.06521647193319793
+Custom LSA,4,sci.space,7,need,0.05701834427319201
+Custom LSA,4,sci.space,8,probably,0.05338460450158733
+Custom LSA,5,sci.med,1,need,0.08701620317893113
+Custom LSA,5,sci.med,2,think,0.06757152518909075
+Custom LSA,5,sci.med,3,hope,0.059748694507475636
+Custom LSA,5,sci.med,4,ve,0.05966443293281768
+Custom LSA,5,sci.med,5,run,0.059315558520632396
+Custom LSA,5,sci.med,6,available,0.05884401875455446
+Custom LSA,5,sci.med,7,sure,0.0463174573435894
+Custom LSA,5,sci.med,8,come,0.04606203671352212
+Custom LSA,8,rec.autos,1,question,0.16533209171643717
+Custom LSA,8,rec.autos,2,probably,0.1119187155891566
+Custom LSA,8,rec.autos,3,year,0.11137377439243398
+Custom LSA,8,rec.autos,4,know,0.0998506478485917
+Custom LSA,8,rec.autos,5,point,0.08527446630225248
+Custom LSA,8,rec.autos,6,nasa,0.07697482503359411
+Custom LSA,8,rec.autos,7,make,0.07679035784831885
+Custom LSA,8,rec.autos,8,let,0.07431715579063258
+Sklearn TruncatedSVD,0,comp.graphics,1,info,0.16915470444870545
+Sklearn TruncatedSVD,0,comp.graphics,2,looking,0.09072045230826511
+Sklearn TruncatedSVD,0,comp.graphics,3,post,0.08405115520957769
+Sklearn TruncatedSVD,0,comp.graphics,4,able,0.059055953439169154
+Sklearn TruncatedSVD,0,comp.graphics,5,lot,0.05664112040298715
+Sklearn TruncatedSVD,0,comp.graphics,6,let,0.0555309453849074
+Sklearn TruncatedSVD,0,comp.graphics,7,run,0.05191262715260535
+Sklearn TruncatedSVD,0,comp.graphics,8,help,0.05127538092760855
+Sklearn TruncatedSVD,2,talk.politics.misc,1,government,0.05288898237337187
+Sklearn TruncatedSVD,2,talk.politics.misc,2,good,0.048497992521040124
+Sklearn TruncatedSVD,2,talk.politics.misc,3,power,0.045341333406508755
+Sklearn TruncatedSVD,2,talk.politics.misc,4,let,0.04069035749150836
+Sklearn TruncatedSVD,2,talk.politics.misc,5,edu,0.03575992229599443
+Sklearn TruncatedSVD,2,talk.politics.misc,6,mr,0.0350601477609732
+Sklearn TruncatedSVD,2,talk.politics.misc,7,want,0.03084124766845059
+Sklearn TruncatedSVD,2,talk.politics.misc,8,able,0.029890819345001332
+Sklearn TruncatedSVD,3,rec.sport.baseball,1,did,0.07175944367140684
+Sklearn TruncatedSVD,3,rec.sport.baseball,2,time,0.05252564371522056
+Sklearn TruncatedSVD,3,rec.sport.baseball,3,com,0.03842451157971173
+Sklearn TruncatedSVD,3,rec.sport.baseball,4,know,0.03834268551425828
+Sklearn TruncatedSVD,3,rec.sport.baseball,5,think,0.03818722415724957
+Sklearn TruncatedSVD,3,rec.sport.baseball,6,article,0.03716457282051314
+Sklearn TruncatedSVD,3,rec.sport.baseball,7,come,0.03534708795552321
+Sklearn TruncatedSVD,3,rec.sport.baseball,8,send,0.030250318385156957
+Sklearn TruncatedSVD,4,sci.space,1,does,0.14247335551452117
+Sklearn TruncatedSVD,4,sci.space,2,year,0.08694458375974942
+Sklearn TruncatedSVD,4,sci.space,3,mail,0.08407125409183494
+Sklearn TruncatedSVD,4,sci.space,4,probably,0.07076715492512246
+Sklearn TruncatedSVD,4,sci.space,5,did,0.06306177204719272
+Sklearn TruncatedSVD,4,sci.space,6,way,0.05765769836368686
+Sklearn TruncatedSVD,4,sci.space,7,question,0.05655422514324566
+Sklearn TruncatedSVD,4,sci.space,8,medical,0.052952831016504685
+Sklearn TruncatedSVD,5,sci.med,1,think,0.12152768446800587
+Sklearn TruncatedSVD,5,sci.med,2,mail,0.08364257889886333
+Sklearn TruncatedSVD,5,sci.med,3,need,0.06779858944816824
+Sklearn TruncatedSVD,5,sci.med,4,good,0.06685814405843338
+Sklearn TruncatedSVD,5,sci.med,5,hope,0.05937868253840864
+Sklearn TruncatedSVD,5,sci.med,6,post,0.0511644251255821
+Sklearn TruncatedSVD,5,sci.med,7,engine,0.047858381569781616
+Sklearn TruncatedSVD,5,sci.med,8,come,0.04689983307419693
+Sklearn TruncatedSVD,8,rec.autos,1,question,0.1500410560420019
+Sklearn TruncatedSVD,8,rec.autos,2,year,0.12438768748164844
+Sklearn TruncatedSVD,8,rec.autos,3,know,0.10447300246629142
+Sklearn TruncatedSVD,8,rec.autos,4,point,0.0917378997874199
+Sklearn TruncatedSVD,8,rec.autos,5,probably,0.08914306243739853
+Sklearn TruncatedSVD,8,rec.autos,6,lot,0.08397770953938823
+Sklearn TruncatedSVD,8,rec.autos,7,really,0.07485384197879678
+Sklearn TruncatedSVD,8,rec.autos,8,medical,0.074038372646468
