@@ -1,0 +1,37 @@
+item_id,topic,title,text
+i01,machine_learning,Введение в деревья решений,деревья решений классификация признаки энтропия информация обучение модель
+i02,machine_learning,Градиентный бустинг на табличных данных,градиентный бустинг ансамбль деревья loss функция качество табличные данные
+i03,machine_learning,Регуляризация линейных моделей,линейная регрессия логистическая регрессия регуляризация l1 l2 переобучение
+i04,machine_learning,Метрики качества классификации,accuracy precision recall f1 roc auc confusion matrix оценка модели
+i05,machine_learning,Кросс-валидация и подбор параметров,cross validation grid search train test split гиперпараметры качество
+i06,machine_learning,Ансамблевые методы,bagging boosting random forest stacking ансамбль моделей устойчивость качество
+i07,natural_language,TF-IDF для анализа текстов,текст корпус токенизация tfidf векторизация слова документы признаки
+i08,natural_language,Латентно-семантический анализ,lsa svd латентные факторы семантика текст документы матрица терм
+i09,natural_language,Классификация новостей,новости текст классификация наивный байес логистическая регрессия признаки
+i10,natural_language,Поиск похожих документов,косинусное сходство документы embedding поиск похожий текст рекомендация
+i11,natural_language,Предобработка русского текста,лемматизация стоп слова нормализация токены морфология русский язык
+i12,natural_language,Тематическое моделирование,topic modeling lda темы документы распределение слов вероятностная модель
+i13,databases,Индексы в реляционных базах,база данных sql индекс btree запрос оптимизация таблица
+i14,databases,Нормализация схем данных,нормализация база данных ключ связь таблицы формы зависимости
+i15,databases,Транзакции и ACID,транзакции acid изоляция атомарность согласованность durability база данных
+i16,databases,Аналитические хранилища,data warehouse olap витрина данных аналитика sql агрегация
+i17,databases,NoSQL модели хранения,nosql key value document graph column database масштабирование
+i18,databases,Оптимизация SQL-запросов,sql explain join index query optimizer performance база данных
+i19,computer_vision,Свёрточные нейронные сети,computer vision cnn convolution pooling image classification нейронная сеть
+i20,computer_vision,Детекция объектов,object detection bounding box yolo rcnn изображение компьютерное зрение
+i21,computer_vision,Сегментация изображений,segmentation mask image pixel unet semantic instance vision
+i22,computer_vision,Аугментация изображений,augmentation image rotate crop flip noise dataset обучение
+i23,computer_vision,Распознавание лиц,face recognition embedding similarity verification computer vision
+i24,computer_vision,Классификация изображений,image classification resnet efficientnet cnn dataset accuracy
+i25,security,Основы криптографии,cryptography encryption key hash signature security protocol
+i26,security,Анализ сетевых атак,network attack intrusion detection traffic anomaly security
+i27,security,Безопасность веб-приложений,web security xss csrf sql injection vulnerability authentication
+i28,security,Управление доступом,access control role permission authentication authorization security
+i29,security,Логи и мониторинг безопасности,logs monitoring siem anomaly detection incident security
+i30,security,Защита персональных данных,privacy personal data gdpr anonymization security compliance
+i31,recommenders,Коллаборативная фильтрация,recommendation collaborative filtering user item rating matrix similarity
+i32,recommenders,Матричная факторизация,matrix factorization latent factors recommender svd rating prediction
+i33,recommenders,SLIM-рекомендатель,slim sparse linear method item item model recommender l1 regularization
+i34,recommenders,Оценка рекомендательных систем,rmse ndcg precision recall recommender ranking metrics
+i35,recommenders,Content-based рекомендации,content based recommendation tfidf text profile similarity items
+i36,recommenders,Гибридные рекомендатели,hybrid recommender collaborative content model ranking personalization
