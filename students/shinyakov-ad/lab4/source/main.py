@@ -2,16 +2,6 @@ from pathlib import Path
 import os
 import time
 import warnings
-
-LAB_DIR = Path(__file__).resolve().parents[1]
-MPLCONFIGDIR = LAB_DIR / ".matplotlib-cache"
-MPLCONFIGDIR.mkdir(parents=True, exist_ok=True)
-os.environ.setdefault("MPLCONFIGDIR", str(MPLCONFIGDIR))
-os.environ.setdefault("MPLBACKEND", "Agg")
-os.environ.setdefault("LOKY_MAX_CPU_COUNT", "1")
-warnings.filterwarnings("ignore", category=RuntimeWarning)
-warnings.filterwarnings("ignore", category=UserWarning)
-
 import matplotlib.pyplot as plt
 import pandas as pd
 from data_load import load_dataset
@@ -48,7 +38,7 @@ def save_clusters_plot(X, labels, output_path, title):
 
 
 def main():
-    artifacts_dir = LAB_DIR / "artifacts"
+    artifacts_dir = Path("artifacts")
     artifacts_dir.mkdir(parents=True, exist_ok=True)
 
     dataset = load_dataset(random_state=RANDOM_STATE)

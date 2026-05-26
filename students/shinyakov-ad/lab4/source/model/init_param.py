@@ -3,7 +3,7 @@ from sklearn.cluster import KMeans
 
 
 def random_init(X, n_components, random_state=42):
-    n_samples, n_features = X.shape
+    _, n_features = X.shape
 
     kmeans = KMeans(
         n_clusters=n_components,
