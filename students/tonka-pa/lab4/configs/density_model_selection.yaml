@@ -1,0 +1,15 @@
+name: density_model_selection
+task: model_selection
+
+data:
+  n_samples: 30000
+  scale: true
+  random_state: 0
+
+model:
+  covariance_type: diag
+  k_grid: [1, 2, 3, 5, 7, 10, 15, 20]
+  n_init: 1
+  init_params: kmeans
+  max_iter: 100
+  random_state: 0

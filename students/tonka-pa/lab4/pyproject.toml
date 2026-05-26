@@ -1,0 +1,30 @@
+[project]
+name = "lab4"
+version = "0.1.0"
+description = "Laboratory work 4: EM algorithm and Gaussian Mixture Model"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "matplotlib>=3.10.0",
+    "numpy>=2.0",
+    "pandas>=2.2",
+    "pyyaml>=6.0",
+    "rich>=13.7",
+    "scikit-learn>=1.6",
+    "scipy>=1.15",
+    "seaborn>=0.13",
+    "tabulate>=0.10.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.6",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]

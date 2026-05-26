@@ -1,0 +1,15 @@
+name: density_k_2
+task: density
+
+data:
+  n_samples: 50000
+  scale: true
+  random_state: 0
+
+model:
+  n_components: 2
+  covariance_type: diag
+  n_init: 2
+  init_params: kmeans
+  max_iter: 100
+  random_state: 0
