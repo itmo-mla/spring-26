@@ -1,0 +1,31 @@
+name: classifier_gmm
+task: classification
+
+# Smaller subsample makes the QDA / full-cov per-class fits tractable on
+# the 200-dimensional Santander features.
+data:
+  n_samples: 30000
+  scale: true
+  random_state: 0
+
+runs:
+  - n_components: 1
+    covariance_type: diag
+    baseline: gnb
+    random_state: 0
+  - n_components: 1
+    covariance_type: full
+    baseline: qda
+    random_state: 0
+    reg_covar: 1.0e-5
+  - n_components: 3
+    covariance_type: diag
+    baseline: gmm
+    n_init: 2
+    random_state: 0
+  - n_components: 3
+    covariance_type: full
+    baseline: gmm
+    n_init: 1
+    reg_covar: 1.0e-4
+    random_state: 0
