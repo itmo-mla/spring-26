@@ -9,7 +9,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 from sklearn import ensemble
 from sklearn.model_selection import GridSearchCV
+
 from RandomForestClassifier import RandomForestClassifier
+from visuals import test_loss_plot, train_loss_plot
+
 EPS = 1e-5
 MAX_ITERS = 1e5
 
@@ -84,7 +87,7 @@ dataset_path = kagglehub.dataset_download("muhammedderric/fitness-classification
 csv_path = os.path.join(dataset_path, 'fitness_dataset.csv')
 df = pd.read_csv(csv_path)
 # df['bias'] = 1
-df = drop_outliers(df, ['heart_rate', 'weight_kg', 'blood_pressure'])
+df = drop_outliers(df, ['heart_rate'])
 df = column_normalisation(df, ['age', 'height_cm', 'weight_kg', 'heart_rate', 'blood_pressure', 'sleep_hours', 'nutrition_quality', 'activity_index'])
 replace_vals = {
     'smokes': {
@@ -110,29 +113,17 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, Y, test_size=0.3, random_state=42
 )
 
-model = RandomForestClassifier(500, 8, 15, 5, 5, 5, criterion='log_loss')
-m = {
-        'accuracy': 0,
-        'precision': 0,
-        'recall': 0,
-        'f1_score': 0
-    }
-n = 25
-for i in range(n):
-    model.fit(X_train, y_train)
-    rs = model.predict(X_test)
-    res = calculate_metrics(y_test, rs)
-    m['accuracy'] += res['accuracy'] / n
-    m['precision'] += res['precision'] / n
-    m['f1_score'] += res['f1_score'] / n
-print(f"{m['accuracy']:.4f}")
-print(f"{m['precision']:.4f}")
-print(f"{m['f1_score']:.4f}")
+model = RandomForestClassifier(1000, 7, 40, 5, 5, 5, criterion='log_loss')
+model.fit(X_train, y_train)
+rs = model.predict(X_test)
+res = calculate_metrics(y_test, rs)
+train_loss_plot(model, X_train, y_train)
+test_loss_plot(model, X_test, y_test)
 
 sk_model = ensemble.RandomForestClassifier(
     criterion='log_loss',            
-    n_estimators=15,            
-    max_samples=500,           
+    n_estimators=400,            
+    max_samples=1000,           
     max_features=8,            
     random_state=42            
 )
@@ -145,9 +136,9 @@ for i in X_train.columns:
     print(f'{i}: {model.importance(i, X_train, y_train):.2f}')
 
 param_grid = {
-    'n_estimators': [5, 15],
+    'n_estimators': [200, 400],
     'l_sample': [500, 1000],
-    'n_feat': [4, 8],
+    'n_feat': [5, 8],
     'tol_train': [5],
     'tol_valid': [5],
     'base_classifier__max_depth': [3, 5],

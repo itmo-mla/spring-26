@@ -28,7 +28,7 @@ class RandomForestClassifier:
         return np.mean(y_true != y_pred)
 
     def fit(self, X_train:pd.DataFrame, y_train:pd.Series):
-        for i in range(self.n_estimators):
+        while len(self.classifiers) < self.n_estimators:
             model = clone(self.base_classifier)
             batch = X_train.sample(n=self.l_sample, axis=0, replace=True)
             batch_ind = batch.index
@@ -55,6 +55,13 @@ class RandomForestClassifier:
         for i in range(len(self.classifiers)):
             y_pred += self.classifiers[i].predict(X_test[self.columns[i]])
         return np.sign(y_pred / T)
+    
+    def _partial_predict(self, df: pd.DataFrame, k:int, y_true):
+        y_pred = np.zeros(df.shape[0])
+        for i in range(k):
+            y_pred += self.classifiers[i].predict(df[self.columns[i]])
+        y_pred = np.sign(y_pred / k)
+        return self._error_rate(y_true, y_pred)
 
     def _out_of_bag_obj(self, x_ind: int, X_train):
         score = 0
