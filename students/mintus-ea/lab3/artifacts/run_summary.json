@@ -1,0 +1,24 @@
+{
+  "dataset": {
+    "name": "sklearn Breast Cancer Wisconsin",
+    "samples": 569,
+    "features": 30,
+    "classes": 2,
+    "positive_class": "malignant"
+  },
+  "train_size": 455,
+  "test_size": 114,
+  "parameters": {
+    "random_state": 42,
+    "test_size": 0.2,
+    "cv_folds": 5,
+    "n_estimators": 140,
+    "learning_rate": 0.08,
+    "max_depth": 2,
+    "min_samples_split": 8,
+    "min_samples_leaf": 4,
+    "subsample": 1.0,
+    "max_features": null
+  },
+  "custom_final_train_loss": 0.15395326985808205
+}
