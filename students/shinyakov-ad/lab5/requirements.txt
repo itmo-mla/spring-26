@@ -1,0 +1,7 @@
+datasets
+numpy
+scikit-learn
+pandas
+matplotlib
+scipy
+setuptools
