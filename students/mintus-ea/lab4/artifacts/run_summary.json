@@ -1,0 +1,24 @@
+{
+  "dataset": {
+    "name": "sklearn Wine recognition",
+    "samples": 178,
+    "features": 13,
+    "classes": 3,
+    "preprocessing": "StandardScaler fitted on train split"
+  },
+  "train_size": 133,
+  "test_size": 45,
+  "parameters": {
+    "random_state": 42,
+    "test_size": 0.25,
+    "n_components": 3,
+    "max_iter": 200,
+    "tol": 0.0001,
+    "reg_covar": 1e-05,
+    "n_init": 5
+  },
+  "custom_converged": true,
+  "sklearn_converged": true,
+  "custom_train_time_sec": 0.014628792006988078,
+  "sklearn_train_time_sec": 0.04405058303382248
+}
