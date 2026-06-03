@@ -1,0 +1,30 @@
+{
+  "my_best_params": {
+    "n_components": 2,
+    "reg_covar": 0.001
+  },
+  "my_best_cv_score": -2.431984462923995,
+  "my_metrics": {
+    "model": "My GMM (EM)",
+    "avg_log_likelihood": -2.5014041222110506,
+    "accuracy": 0.6666666666666666,
+    "ari": 0.5538461538461539,
+    "bic": 248.71897140086554,
+    "aic": 208.08424733266304
+  },
+  "my_train_time": 2.660327600024175,
+  "sklearn_best_params": {
+    "n_components": 2,
+    "reg_covar": 0.001
+  },
+  "sklearn_best_cv_score": -2.4319844629241727,
+  "sklearn_metrics": {
+    "model": "Sklearn GaussianMixture",
+    "avg_log_likelihood": -2.5014041222175663,
+    "accuracy": 0.6666666666666666,
+    "ari": 0.5538461538461539,
+    "bic": 248.71897140125648,
+    "aic": 208.08424733305398
+  },
+  "sklearn_train_time": 3.367574199975934
+}
