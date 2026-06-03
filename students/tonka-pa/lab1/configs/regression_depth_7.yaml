@@ -1,0 +1,20 @@
+name: regression_depth_7
+task: regression
+dataset:
+  openml_id: 1000
+  drop_measured: true
+split:
+  test_size: 0.25
+  validation_size: 0.25
+  random_state: 42
+model:
+  criterion: squared_error
+  max_depth: 7
+  min_samples_split: 2
+  min_samples_leaf: 1
+  min_impurity_decrease: 0.0
+  ccp_alpha: 0.0
+pruning:
+  enabled: false
+  max_candidates: 15
+

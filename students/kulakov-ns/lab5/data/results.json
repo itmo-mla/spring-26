@@ -1,0 +1,64 @@
+{
+  "dataset": {
+    "n_users": 24,
+    "n_items": 36,
+    "n_interactions": 408,
+    "n_train": 336,
+    "n_test": 72,
+    "topics": "computer_vision, databases, machine_learning, natural_language, recommenders, security"
+  },
+  "results": {
+    "my_slim": {
+      "best_params_": {
+        "alpha_l1": 0.001,
+        "alpha_l2": 0.01
+      },
+      "best_score_": 1.1064340723731516,
+      "metrics": {
+        "model": "My SLIM",
+        "rmse": 0.9171939695106183,
+        "ndcg@10": 0.531257734767085
+      }
+    },
+    "sklearn_slim": {
+      "best_params_": {
+        "alpha_l1": 0.001,
+        "alpha_l2": 0.01
+      },
+      "best_score_": 1.115138487637918,
+      "metrics": {
+        "model": "Sklearn ElasticNet SLIM",
+        "rmse": 0.9469932694198884,
+        "ndcg@10": 0.5250502084972378
+      }
+    },
+    "my_lsa": {
+      "best_params_": {
+        "n_components": 6
+      },
+      "best_score_": 1.039967560127354,
+      "metrics": {
+        "model": "My LSA/SVD",
+        "rmse": 0.8771557574414571,
+        "ndcg@10": 0.547683170985746
+      }
+    },
+    "sklearn_lsa": {
+      "best_params_": {
+        "n_components": 6
+      },
+      "best_score_": 1.0399695802804216,
+      "metrics": {
+        "model": "Sklearn TruncatedSVD",
+        "rmse": 0.8771559881282431,
+        "ndcg@10": 0.547683170985746
+      }
+    }
+  },
+  "train_times": {
+    "my_slim": 3.331520300009288,
+    "sklearn_slim": 1.0024512999807484,
+    "my_lsa": 0.046840100025292486,
+    "sklearn_lsa": 0.06898900005035102
+  }
+}

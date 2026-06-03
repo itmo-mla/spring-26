@@ -1,0 +1,21 @@
+{
+  "dataset": {
+    "name": "sklearn Optical Recognition of Handwritten Digits",
+    "samples": 1797,
+    "features": 64,
+    "classes": 10,
+    "image_shape": "8x8"
+  },
+  "best_params": {
+    "max_depth": null,
+    "max_features": "sqrt",
+    "min_samples_leaf": 2,
+    "n_estimators": 80
+  },
+  "best_oob_score": 0.9613778705636743,
+  "grid_cv_folds": 3,
+  "grid_time_sec": 8.304304874996888,
+  "custom_train_time_sec": 0.1742495000071358,
+  "sklearn_train_time_sec": 0.09430654199968558,
+  "custom_oob_coverage": 1.0
+}

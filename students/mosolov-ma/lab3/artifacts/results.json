@@ -1,0 +1,34 @@
+{
+  "dataset": {
+    "shape": [
+      303,
+      13
+    ],
+    "target_name": "target",
+    "positive_share": 0.5445544554455446
+  },
+  "custom": {
+    "cv_accuracy_mean": 0.8100340136054422,
+    "cv_accuracy_std": 0.09962479575601424,
+    "test_metrics": {
+      "accuracy": 0.8360655737704918,
+      "precision": 0.7948717948717948,
+      "recall": 0.9393939393939394,
+      "f1": 0.8611111111111112,
+      "roc_auc": 0.9047619047619047
+    },
+    "train_time_seconds": 0.15463763799971275
+  },
+  "sklearn": {
+    "cv_accuracy_mean": 0.8016156462585033,
+    "cv_accuracy_std": 0.07127440745190039,
+    "test_metrics": {
+      "accuracy": 0.7704918032786885,
+      "precision": 0.7567567567567568,
+      "recall": 0.8484848484848485,
+      "f1": 0.8,
+      "roc_auc": 0.8874458874458875
+    },
+    "train_time_seconds": 0.080254425000021
+  }
+}

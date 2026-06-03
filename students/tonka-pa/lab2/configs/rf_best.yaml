@@ -1,0 +1,15 @@
+experiment_name: rf_best
+task: classification
+random_state: 42
+test_size: 0.2
+use_grid_search_best_params: true
+compute_oob_importance: true
+include_decision_tree: true
+
+model_params:
+  n_estimators: 200
+  max_features: sqrt
+  max_depth: null
+  min_samples_leaf: 1
+  criterion: gini
+  oob_score: true
