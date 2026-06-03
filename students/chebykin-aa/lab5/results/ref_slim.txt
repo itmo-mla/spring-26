@@ -1,0 +1,4 @@
+SLIMRef (ElasticNet)
+RMSE: 2.6648
+NDCG@10: 0.3911
+Время обучения: 24.97s
