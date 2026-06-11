@@ -18,6 +18,7 @@ class OOBRandomForestClassifier(ClassifierMixin, BaseEstimator):
         n_estimators: int = 100,
         max_features: str | int | float | None = "sqrt",
         max_depth: int | None = None,
+        max_leaf_nodes: int | None = None,
         min_samples_split: int = 2,
         min_samples_leaf: int = 1,
         criterion: str = "gini",
@@ -27,6 +28,7 @@ class OOBRandomForestClassifier(ClassifierMixin, BaseEstimator):
         self.n_estimators = n_estimators
         self.max_features = max_features
         self.max_depth = max_depth
+        self.max_leaf_nodes = max_leaf_nodes
         self.min_samples_split = min_samples_split
         self.min_samples_leaf = min_samples_leaf
         self.criterion = criterion
@@ -71,6 +73,7 @@ class OOBRandomForestClassifier(ClassifierMixin, BaseEstimator):
             tree = DecisionTreeClassifier(
                 criterion=self.criterion,
                 max_depth=self.max_depth,
+                max_leaf_nodes=self.max_leaf_nodes,
                 min_samples_split=self.min_samples_split,
                 min_samples_leaf=self.min_samples_leaf,
                 random_state=tree_seed,

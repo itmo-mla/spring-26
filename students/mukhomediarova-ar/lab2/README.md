@@ -37,6 +37,7 @@
 | `n_estimators` | `40`, `80`, `120` |
 | `max_features` | `sqrt`, `log2`, `0.5` |
 | `max_depth` | `None`, `5`, `8` |
+| `max_leaf_nodes` | `None`, `16`, `32` |
 | `min_samples_leaf` | `1`, `3` |
 
 ## Запуск
@@ -64,6 +65,7 @@ python source/main.py
 Лучшие параметры по OOB:
 
 - `max_depth = None`;
+- `max_leaf_nodes = None`;
 - `max_features = 0.5`;
 - `min_samples_leaf = 1`;
 - `n_estimators = 80`.

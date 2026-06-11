@@ -40,6 +40,7 @@ def run_oob_grid_search(X_train: pd.DataFrame, y_train: np.ndarray) -> GridSearc
         "n_estimators": [40, 80, 120],
         "max_features": ["sqrt", "log2", 0.5],
         "max_depth": [None, 5, 8],
+        "max_leaf_nodes": [None, 16, 32],
         "min_samples_leaf": [1, 3],
     }
     train_indices = np.arange(len(y_train))
@@ -146,6 +147,7 @@ def main() -> None:
         "param_n_estimators",
         "param_max_features",
         "param_max_depth",
+        "param_max_leaf_nodes",
         "param_min_samples_leaf",
         "mean_test_score",
         "rank_test_score",
