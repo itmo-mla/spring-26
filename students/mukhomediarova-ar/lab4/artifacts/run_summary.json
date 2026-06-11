@@ -1,0 +1,85 @@
+{
+  "dataset": "Wine recognition dataset, sklearn.datasets.load_wine",
+  "sizes": {
+    "train": 124,
+    "test": 54,
+    "features": 13,
+    "classes": 3
+  },
+  "target_names": [
+    "class_0",
+    "class_1",
+    "class_2"
+  ],
+  "feature_names": [
+    "alcohol",
+    "malic_acid",
+    "ash",
+    "alcalinity_of_ash",
+    "magnesium",
+    "total_phenols",
+    "flavanoids",
+    "nonflavanoid_phenols",
+    "proanthocyanins",
+    "color_intensity",
+    "hue",
+    "od280/od315_of_diluted_wines",
+    "proline"
+  ],
+  "model_params": {
+    "n_components": 3,
+    "tol": 0.0001,
+    "reg_covar": 0.0001,
+    "max_iter": 300,
+    "n_init": 5,
+    "random_state": 42
+  },
+  "metrics": [
+    {
+      "model": "Custom GaussianMixtureEM",
+      "train_log_likelihood": -1400.4411805890363,
+      "test_log_likelihood": -891.865255416692,
+      "train_avg_log_likelihood": -11.29388048862126,
+      "test_avg_log_likelihood": -16.51602324845726,
+      "test_bic": 3036.271501454566,
+      "test_aic": 2411.730510833384,
+      "ari_vs_true_labels": 0.22665098066759143,
+      "nmi_vs_true_labels": 0.2884314156046281,
+      "cluster_accuracy_vs_true_labels": NaN,
+      "n_iter": 41,
+      "converged": true,
+      "train_time_seconds": 0.06565587501972914
+    },
+    {
+      "model": "sklearn GaussianMixture",
+      "train_log_likelihood": -1291.383757712837,
+      "test_log_likelihood": -810.5233618376685,
+      "train_avg_log_likelihood": -10.41438514284546,
+      "test_avg_log_likelihood": -15.00969188588275,
+      "test_bic": 2873.587714296519,
+      "test_aic": 2249.046723675337,
+      "ari_vs_true_labels": 0.4499755319687484,
+      "nmi_vs_true_labels": 0.5847377383424193,
+      "cluster_accuracy_vs_true_labels": NaN,
+      "n_iter": 6,
+      "converged": true,
+      "train_time_seconds": 0.0310885407961905
+    }
+  ],
+  "custom_weights": [
+    0.41864461142238146,
+    0.07258064508789176,
+    0.508774743489727
+  ],
+  "sklearn_weights": [
+    0.048387096774193575,
+    0.6296745695244045,
+    0.32193833370140196
+  ],
+  "custom_convergence": {
+    "n_iter": 41,
+    "converged": true,
+    "initial_train_avg_log_likelihood": -13.309509085326061,
+    "final_train_avg_log_likelihood": -11.29388048862126
+  }
+}
