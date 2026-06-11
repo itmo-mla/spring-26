@@ -1,0 +1,134 @@
+{
+  "dataset": "Breast Cancer Wisconsin (Diagnostic), sklearn.datasets.load_breast_cancer",
+  "target_names": [
+    "malignant",
+    "benign"
+  ],
+  "sizes": {
+    "train": 455,
+    "test": 114,
+    "features": 30
+  },
+  "model_params": {
+    "n_estimators": 120,
+    "learning_rate": 0.08,
+    "max_depth": 3,
+    "min_samples_leaf": 3,
+    "subsample": 0.9,
+    "random_state": 42
+  },
+  "metrics": [
+    {
+      "model": "Custom Gradient Boosting",
+      "accuracy": 0.956140350877193,
+      "precision": 0.9466666666666667,
+      "recall": 0.9861111111111112,
+      "f1": 0.9659863945578231,
+      "roc_auc": 0.9930555555555556,
+      "log_loss": 0.1072585091985271,
+      "train_time_seconds": 0.3787612090818584
+    },
+    {
+      "model": "sklearn GradientBoostingClassifier",
+      "accuracy": 0.956140350877193,
+      "precision": 0.9466666666666667,
+      "recall": 0.9861111111111112,
+      "f1": 0.9659863945578231,
+      "roc_auc": 0.9927248677248678,
+      "log_loss": 0.10286620215767665,
+      "train_time_seconds": 0.3276400840841234
+    }
+  ],
+  "cross_validation_summary": [
+    {
+      "model": "Custom Gradient Boosting",
+      "accuracy_mean": 0.9604395604395604,
+      "accuracy_std": 0.022787298190470047,
+      "roc_auc_mean": 0.9936016511867904,
+      "log_loss_mean": 0.10812632794618453,
+      "fit_time_mean_seconds": 0.3162670135498047
+    },
+    {
+      "model": "sklearn GradientBoostingClassifier",
+      "accuracy_mean": 0.9714285714285715,
+      "accuracy_std": 0.01996252980723624,
+      "roc_auc_mean": 0.9932920536635708,
+      "log_loss_mean": 0.10870372787759837,
+      "fit_time_mean_seconds": 0.39637279510498047
+    }
+  ],
+  "confusion_matrices": {
+    "custom": [
+      [
+        38,
+        4
+      ],
+      [
+        1,
+        71
+      ]
+    ],
+    "sklearn": [
+      [
+        38,
+        4
+      ],
+      [
+        1,
+        71
+      ]
+    ]
+  },
+  "top_features": [
+    {
+      "feature": "worst concave points",
+      "custom_importance": 0.12614818506252207,
+      "sklearn_importance": 0.2375733018095178
+    },
+    {
+      "feature": "worst perimeter",
+      "custom_importance": 0.11142901077213717,
+      "sklearn_importance": 0.2673275873144181
+    },
+    {
+      "feature": "worst area",
+      "custom_importance": 0.07173668328326455,
+      "sklearn_importance": 0.026311552554723328
+    },
+    {
+      "feature": "worst radius",
+      "custom_importance": 0.06657200908477068,
+      "sklearn_importance": 0.1752865024628427
+    },
+    {
+      "feature": "mean concave points",
+      "custom_importance": 0.06179060688861271,
+      "sklearn_importance": 0.16105824741880384
+    },
+    {
+      "feature": "worst texture",
+      "custom_importance": 0.058868538934411276,
+      "sklearn_importance": 0.04108298165135786
+    },
+    {
+      "feature": "mean compactness",
+      "custom_importance": 0.05551892480554141,
+      "sklearn_importance": 0.0017961434790823285
+    },
+    {
+      "feature": "area error",
+      "custom_importance": 0.04575083433841648,
+      "sklearn_importance": 0.012542595212054504
+    },
+    {
+      "feature": "mean texture",
+      "custom_importance": 0.04423087445018835,
+      "sklearn_importance": 0.013520408935310311
+    },
+    {
+      "feature": "worst smoothness",
+      "custom_importance": 0.03832871182811554,
+      "sklearn_importance": 0.0050547553183661435
+    }
+  ]
+}

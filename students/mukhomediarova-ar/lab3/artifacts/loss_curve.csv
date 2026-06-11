@@ -1,0 +1,241 @@
+model,iteration,test_log_loss
+Custom Gradient Boosting,1,0.597473278048712
+Custom Gradient Boosting,2,0.5473677193445103
+Custom Gradient Boosting,3,0.504687369414201
+Custom Gradient Boosting,4,0.46803937066357953
+Custom Gradient Boosting,5,0.4344578485229361
+Custom Gradient Boosting,6,0.4064922375157986
+Custom Gradient Boosting,7,0.3821390932983656
+Custom Gradient Boosting,8,0.35725758189535134
+Custom Gradient Boosting,9,0.3400682217297734
+Custom Gradient Boosting,10,0.3189561570071457
+Custom Gradient Boosting,11,0.3005089838046354
+Custom Gradient Boosting,12,0.28529735788743693
+Custom Gradient Boosting,13,0.2704907454107126
+Custom Gradient Boosting,14,0.2592440676021797
+Custom Gradient Boosting,15,0.24807938142012395
+Custom Gradient Boosting,16,0.2399206861476261
+Custom Gradient Boosting,17,0.22997038888771337
+Custom Gradient Boosting,18,0.2174626146295944
+Custom Gradient Boosting,19,0.20765400756987037
+Custom Gradient Boosting,20,0.19941194430689038
+Custom Gradient Boosting,21,0.19269576807028768
+Custom Gradient Boosting,22,0.1870962612049189
+Custom Gradient Boosting,23,0.18390492483105889
+Custom Gradient Boosting,24,0.17873214590136008
+Custom Gradient Boosting,25,0.17323452589141314
+Custom Gradient Boosting,26,0.16837208808859652
+Custom Gradient Boosting,27,0.1615117248659481
+Custom Gradient Boosting,28,0.15594693274958896
+Custom Gradient Boosting,29,0.1527633373522195
+Custom Gradient Boosting,30,0.1493398299780535
+Custom Gradient Boosting,31,0.14753209419111635
+Custom Gradient Boosting,32,0.1473875680808148
+Custom Gradient Boosting,33,0.14396264944764958
+Custom Gradient Boosting,34,0.14063417647538454
+Custom Gradient Boosting,35,0.1368032120818219
+Custom Gradient Boosting,36,0.13487730152934665
+Custom Gradient Boosting,37,0.131794479711883
+Custom Gradient Boosting,38,0.12971590628106405
+Custom Gradient Boosting,39,0.1289935116899599
+Custom Gradient Boosting,40,0.12895701126575695
+Custom Gradient Boosting,41,0.1281432270185106
+Custom Gradient Boosting,42,0.12714922123890626
+Custom Gradient Boosting,43,0.12512768395354726
+Custom Gradient Boosting,44,0.12523734943003592
+Custom Gradient Boosting,45,0.12256919651740765
+Custom Gradient Boosting,46,0.11983069426688146
+Custom Gradient Boosting,47,0.11921011326298764
+Custom Gradient Boosting,48,0.11869656619809707
+Custom Gradient Boosting,49,0.11756134655872386
+Custom Gradient Boosting,50,0.11667924635651998
+Custom Gradient Boosting,51,0.1172623983616928
+Custom Gradient Boosting,52,0.11435525954072452
+Custom Gradient Boosting,53,0.11428845105907386
+Custom Gradient Boosting,54,0.1120480669096162
+Custom Gradient Boosting,55,0.11279612865786506
+Custom Gradient Boosting,56,0.11016813504548949
+Custom Gradient Boosting,57,0.10932125081051569
+Custom Gradient Boosting,58,0.10944753202395437
+Custom Gradient Boosting,59,0.10872354488025089
+Custom Gradient Boosting,60,0.10856108247663142
+Custom Gradient Boosting,61,0.10781377318235741
+Custom Gradient Boosting,62,0.1069651281652528
+Custom Gradient Boosting,63,0.10626213838452084
+Custom Gradient Boosting,64,0.10616999388547778
+Custom Gradient Boosting,65,0.10648624672230181
+Custom Gradient Boosting,66,0.10594411847704173
+Custom Gradient Boosting,67,0.1049809919316072
+Custom Gradient Boosting,68,0.10472016285575654
+Custom Gradient Boosting,69,0.10551328136093016
+Custom Gradient Boosting,70,0.10572190535424868
+Custom Gradient Boosting,71,0.10617978603316877
+Custom Gradient Boosting,72,0.10702484942844138
+Custom Gradient Boosting,73,0.10584096236824116
+Custom Gradient Boosting,74,0.10427060470959418
+Custom Gradient Boosting,75,0.10423716897076915
+Custom Gradient Boosting,76,0.10610686901896316
+Custom Gradient Boosting,77,0.1070376553443192
+Custom Gradient Boosting,78,0.10715996849945639
+Custom Gradient Boosting,79,0.10674754050480581
+Custom Gradient Boosting,80,0.10558327422276637
+Custom Gradient Boosting,81,0.10405293903312315
+Custom Gradient Boosting,82,0.10442180641948394
+Custom Gradient Boosting,83,0.10512506621248073
+Custom Gradient Boosting,84,0.10545730708855497
+Custom Gradient Boosting,85,0.10564083797281013
+Custom Gradient Boosting,86,0.10547721546934684
+Custom Gradient Boosting,87,0.10469230529127704
+Custom Gradient Boosting,88,0.10314806916492866
+Custom Gradient Boosting,89,0.10327683690286898
+Custom Gradient Boosting,90,0.10226165486433081
+Custom Gradient Boosting,91,0.10207749906100753
+Custom Gradient Boosting,92,0.10334445050220407
+Custom Gradient Boosting,93,0.10424533144998081
+Custom Gradient Boosting,94,0.10566007278491292
+Custom Gradient Boosting,95,0.10549275865332716
+Custom Gradient Boosting,96,0.10631921540599765
+Custom Gradient Boosting,97,0.10694099192101685
+Custom Gradient Boosting,98,0.10582539272925025
+Custom Gradient Boosting,99,0.10624160997436699
+Custom Gradient Boosting,100,0.10586703803477879
+Custom Gradient Boosting,101,0.10599309973600983
+Custom Gradient Boosting,102,0.10615056744854334
+Custom Gradient Boosting,103,0.10636089380694702
+Custom Gradient Boosting,104,0.10751411229079223
+Custom Gradient Boosting,105,0.10584403116642516
+Custom Gradient Boosting,106,0.10624769137513676
+Custom Gradient Boosting,107,0.10649811960444669
+Custom Gradient Boosting,108,0.10695644323309908
+Custom Gradient Boosting,109,0.10746957039151209
+Custom Gradient Boosting,110,0.10704521287912303
+Custom Gradient Boosting,111,0.10716968086827867
+Custom Gradient Boosting,112,0.10766393282626245
+Custom Gradient Boosting,113,0.10798879722956425
+Custom Gradient Boosting,114,0.10839892957713106
+Custom Gradient Boosting,115,0.10837516773453718
+Custom Gradient Boosting,116,0.10772023199742593
+Custom Gradient Boosting,117,0.10736942218561973
+Custom Gradient Boosting,118,0.10804208186823336
+Custom Gradient Boosting,119,0.10651837560220573
+Custom Gradient Boosting,120,0.1072585091985271
+sklearn GradientBoostingClassifier,1,0.5948708918880079
+sklearn GradientBoostingClassifier,2,0.5388931835462285
+sklearn GradientBoostingClassifier,3,0.4935678289062256
+sklearn GradientBoostingClassifier,4,0.45803456850572366
+sklearn GradientBoostingClassifier,5,0.42524157950800245
+sklearn GradientBoostingClassifier,6,0.39309097669554877
+sklearn GradientBoostingClassifier,7,0.3690128393146048
+sklearn GradientBoostingClassifier,8,0.3468654936133444
+sklearn GradientBoostingClassifier,9,0.3276107764757018
+sklearn GradientBoostingClassifier,10,0.30673890749087035
+sklearn GradientBoostingClassifier,11,0.2863714692828443
+sklearn GradientBoostingClassifier,12,0.26978416301805497
+sklearn GradientBoostingClassifier,13,0.25556740256043553
+sklearn GradientBoostingClassifier,14,0.24379742848324462
+sklearn GradientBoostingClassifier,15,0.23366857163843824
+sklearn GradientBoostingClassifier,16,0.2245433476841274
+sklearn GradientBoostingClassifier,17,0.21535988816453033
+sklearn GradientBoostingClassifier,18,0.20851534923768358
+sklearn GradientBoostingClassifier,19,0.20015556793282668
+sklearn GradientBoostingClassifier,20,0.19281649846479643
+sklearn GradientBoostingClassifier,21,0.18756102509656683
+sklearn GradientBoostingClassifier,22,0.18068870622367297
+sklearn GradientBoostingClassifier,23,0.1756615907073575
+sklearn GradientBoostingClassifier,24,0.170314839216055
+sklearn GradientBoostingClassifier,25,0.16585446182579314
+sklearn GradientBoostingClassifier,26,0.16092793746204537
+sklearn GradientBoostingClassifier,27,0.15820845849132198
+sklearn GradientBoostingClassifier,28,0.15402194112274809
+sklearn GradientBoostingClassifier,29,0.15101231745420718
+sklearn GradientBoostingClassifier,30,0.1478442245604461
+sklearn GradientBoostingClassifier,31,0.14645880822260918
+sklearn GradientBoostingClassifier,32,0.14254930176261868
+sklearn GradientBoostingClassifier,33,0.1404320824852535
+sklearn GradientBoostingClassifier,34,0.13768036715944093
+sklearn GradientBoostingClassifier,35,0.13386294711370172
+sklearn GradientBoostingClassifier,36,0.1331886766316018
+sklearn GradientBoostingClassifier,37,0.13222438415104038
+sklearn GradientBoostingClassifier,38,0.12992202469815078
+sklearn GradientBoostingClassifier,39,0.12893814261015718
+sklearn GradientBoostingClassifier,40,0.12683431115062255
+sklearn GradientBoostingClassifier,41,0.1265480829867618
+sklearn GradientBoostingClassifier,42,0.12521240299727962
+sklearn GradientBoostingClassifier,43,0.1243622736860877
+sklearn GradientBoostingClassifier,44,0.1208229470203624
+sklearn GradientBoostingClassifier,45,0.1209931404336052
+sklearn GradientBoostingClassifier,46,0.12151320379098103
+sklearn GradientBoostingClassifier,47,0.12167908375317132
+sklearn GradientBoostingClassifier,48,0.12021890282183785
+sklearn GradientBoostingClassifier,49,0.11817218137122726
+sklearn GradientBoostingClassifier,50,0.11710974638495544
+sklearn GradientBoostingClassifier,51,0.11507072773373725
+sklearn GradientBoostingClassifier,52,0.1150761522199574
+sklearn GradientBoostingClassifier,53,0.11589636258147476
+sklearn GradientBoostingClassifier,54,0.11530659500738531
+sklearn GradientBoostingClassifier,55,0.11392163242722511
+sklearn GradientBoostingClassifier,56,0.11408439443138216
+sklearn GradientBoostingClassifier,57,0.11270992038697968
+sklearn GradientBoostingClassifier,58,0.11021649173578445
+sklearn GradientBoostingClassifier,59,0.1100985612220722
+sklearn GradientBoostingClassifier,60,0.1088974566902887
+sklearn GradientBoostingClassifier,61,0.10756930050993242
+sklearn GradientBoostingClassifier,62,0.1069459256687523
+sklearn GradientBoostingClassifier,63,0.10457660350443293
+sklearn GradientBoostingClassifier,64,0.10263389058008852
+sklearn GradientBoostingClassifier,65,0.10265945965585968
+sklearn GradientBoostingClassifier,66,0.1018946456930741
+sklearn GradientBoostingClassifier,67,0.1022083832400596
+sklearn GradientBoostingClassifier,68,0.1017611251128408
+sklearn GradientBoostingClassifier,69,0.10097138672672142
+sklearn GradientBoostingClassifier,70,0.10081017194698456
+sklearn GradientBoostingClassifier,71,0.10143271755653772
+sklearn GradientBoostingClassifier,72,0.09982782356750794
+sklearn GradientBoostingClassifier,73,0.09894283400304224
+sklearn GradientBoostingClassifier,74,0.09966326748663372
+sklearn GradientBoostingClassifier,75,0.09799459047239846
+sklearn GradientBoostingClassifier,76,0.09646159947284974
+sklearn GradientBoostingClassifier,77,0.09847386698973372
+sklearn GradientBoostingClassifier,78,0.0978998415332759
+sklearn GradientBoostingClassifier,79,0.09824724383560426
+sklearn GradientBoostingClassifier,80,0.09805534035452808
+sklearn GradientBoostingClassifier,81,0.09850765135581054
+sklearn GradientBoostingClassifier,82,0.09859556144117293
+sklearn GradientBoostingClassifier,83,0.09861446959425545
+sklearn GradientBoostingClassifier,84,0.09931471065320188
+sklearn GradientBoostingClassifier,85,0.09909232097727746
+sklearn GradientBoostingClassifier,86,0.09888120134099707
+sklearn GradientBoostingClassifier,87,0.09890843785576105
+sklearn GradientBoostingClassifier,88,0.10023779366407122
+sklearn GradientBoostingClassifier,89,0.10100261621545804
+sklearn GradientBoostingClassifier,90,0.10084853695302218
+sklearn GradientBoostingClassifier,91,0.10211009373789148
+sklearn GradientBoostingClassifier,92,0.10198624789838764
+sklearn GradientBoostingClassifier,93,0.10277982037156318
+sklearn GradientBoostingClassifier,94,0.10330090105810631
+sklearn GradientBoostingClassifier,95,0.10299575916060408
+sklearn GradientBoostingClassifier,96,0.10337368965094981
+sklearn GradientBoostingClassifier,97,0.10278027268059545
+sklearn GradientBoostingClassifier,98,0.10428516452855077
+sklearn GradientBoostingClassifier,99,0.10476721291741414
+sklearn GradientBoostingClassifier,100,0.103242936067367
+sklearn GradientBoostingClassifier,101,0.10357069410639436
+sklearn GradientBoostingClassifier,102,0.1036470182831349
+sklearn GradientBoostingClassifier,103,0.10366615567723872
+sklearn GradientBoostingClassifier,104,0.10309283307960908
+sklearn GradientBoostingClassifier,105,0.10233688113593167
+sklearn GradientBoostingClassifier,106,0.10270136570582408
+sklearn GradientBoostingClassifier,107,0.10275687117100907
+sklearn GradientBoostingClassifier,108,0.10196941766760824
+sklearn GradientBoostingClassifier,109,0.10152731547279109
+sklearn GradientBoostingClassifier,110,0.10131117808087198
+sklearn GradientBoostingClassifier,111,0.10213276460098558
+sklearn GradientBoostingClassifier,112,0.10193660246995011
+sklearn GradientBoostingClassifier,113,0.10206065696853753
+sklearn GradientBoostingClassifier,114,0.10322096233570836
+sklearn GradientBoostingClassifier,115,0.10278760368008061
+sklearn GradientBoostingClassifier,116,0.10296103543681294
+sklearn GradientBoostingClassifier,117,0.10202241340275794
+sklearn GradientBoostingClassifier,118,0.10205130915663502
+sklearn GradientBoostingClassifier,119,0.10423678826731239
+sklearn GradientBoostingClassifier,120,0.10286620215767665
