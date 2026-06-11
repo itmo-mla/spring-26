@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470">
+  <rect width="900" height="470" fill="#ffffff"/>
+  <text x="450" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700">!>>B25BAB285 8AB8==KE :;0AA>2 8 :><?>=5=B GMM</text>
+  <text x="245" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="700">Custom GaussianMixtureEM</text>
+  <text x="655" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="700">sklearn GaussianMixture</text>
+
+  <g font-family="Arial, sans-serif" font-size="13" fill="#222">
+    <text x="72" y="150" text-anchor="end">class 0</text>
+    <text x="72" y="230" text-anchor="end">class 1</text>
+    <text x="72" y="310" text-anchor="end">class 2</text>
+    <text x="145" y="105" text-anchor="middle">comp 0</text>
+    <text x="225" y="105" text-anchor="middle">comp 1</text>
+    <text x="305" y="105" text-anchor="middle">comp 2</text>
+
+    <text x="482" y="150" text-anchor="end">class 0</text>
+    <text x="482" y="230" text-anchor="end">class 1</text>
+    <text x="482" y="310" text-anchor="end">class 2</text>
+    <text x="555" y="105" text-anchor="middle">comp 0</text>
+    <text x="635" y="105" text-anchor="middle">comp 1</text>
+    <text x="715" y="105" text-anchor="middle">comp 2</text>
+  </g>
+
+  <g stroke="#ffffff" stroke-width="2" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle">
+    <rect x="105" y="120" width="80" height="80" fill="#f7fbff"/><text x="145" y="168" fill="#222">0</text>
+    <rect x="185" y="120" width="80" height="80" fill="#f7fbff"/><text x="225" y="168" fill="#222">0</text>
+    <rect x="265" y="120" width="80" height="80" fill="#08306b"/><text x="305" y="168" fill="#fff">18</text>
+    <rect x="105" y="200" width="80" height="80" fill="#2171b5"/><text x="145" y="248" fill="#fff">12</text>
+    <rect x="185" y="200" width="80" height="80" fill="#f7fbff"/><text x="225" y="248" fill="#222">0</text>
+    <rect x="265" y="200" width="80" height="80" fill="#4292c6"/><text x="305" y="248" fill="#fff">9</text>
+    <rect x="105" y="280" width="80" height="80" fill="#2171b5"/><text x="145" y="328" fill="#fff">11</text>
+    <rect x="185" y="280" width="80" height="80" fill="#f7fbff"/><text x="225" y="328" fill="#222">0</text>
+    <rect x="265" y="280" width="80" height="80" fill="#c6dbef"/><text x="305" y="328" fill="#222">4</text>
+
+    <rect x="515" y="120" width="80" height="80" fill="#f7fbff"/><text x="555" y="168" fill="#222">0</text>
+    <rect x="595" y="120" width="80" height="80" fill="#08306b"/><text x="635" y="168" fill="#fff">18</text>
+    <rect x="675" y="120" width="80" height="80" fill="#f7fbff"/><text x="715" y="168" fill="#222">0</text>
+    <rect x="515" y="200" width="80" height="80" fill="#f7fbff"/><text x="555" y="248" fill="#222">0</text>
+    <rect x="595" y="200" width="80" height="80" fill="#08306b"/><text x="635" y="248" fill="#fff">19</text>
+    <rect x="675" y="200" width="80" height="80" fill="#deebf7"/><text x="715" y="248" fill="#222">2</text>
+    <rect x="515" y="280" width="80" height="80" fill="#f7fbff"/><text x="555" y="328" fill="#222">0</text>
+    <rect x="595" y="280" width="80" height="80" fill="#f7fbff"/><text x="635" y="328" fill="#222">0</text>
+    <rect x="675" y="280" width="80" height="80" fill="#08519c"/><text x="715" y="328" fill="#fff">15</text>
+  </g>
+
+  <text x="245" y="405" text-anchor="middle" font-family="Arial, sans-serif" font-size="14">Custom A<5H8205B :;0AAK 1 8 2 <564C :><?>=5=B0<8 0 8 2.</text>
+  <text x="655" y="405" text-anchor="middle" font-family="Arial, sans-serif" font-size="14">sklearn ?>GB8 >4=>7=0G=> A>?>AB02;O5B :;0AAK 0, 1 8 2 :><?>=5=B0<.</text>
+</svg>
