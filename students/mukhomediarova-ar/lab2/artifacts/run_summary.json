@@ -1,0 +1,121 @@
+{
+  "dataset": "Breast Cancer Wisconsin (Diagnostic), sklearn.datasets.load_breast_cancer",
+  "target_names": [
+    "malignant",
+    "benign"
+  ],
+  "sizes": {
+    "train": 455,
+    "test": 114,
+    "features": 30
+  },
+  "best_params": {
+    "max_depth": null,
+    "max_features": 0.5,
+    "max_leaf_nodes": 16,
+    "min_samples_leaf": 3,
+    "n_estimators": 80
+  },
+  "best_oob_accuracy_from_grid": 0.967032967032967,
+  "custom_oob_accuracy": 0.967032967032967,
+  "sklearn_oob_accuracy": 0.9604395604395605,
+  "confusion_matrices": {
+    "custom": [
+      [
+        39,
+        3
+      ],
+      [
+        2,
+        70
+      ]
+    ],
+    "sklearn": [
+      [
+        39,
+        3
+      ],
+      [
+        2,
+        70
+      ]
+    ]
+  },
+  "images": {
+    "metrics_comparison": "images/metrics_comparison.png",
+    "confusion_matrices": "images/confusion_matrices.png",
+    "feature_importance": "images/feature_importance.png"
+  },
+  "top_oob_features": [
+    {
+      "feature": "worst concave points",
+      "importance_mean": 0.017896389324960786,
+      "importance_std": 0.003410606119686106,
+      "importance_normalized": 0.14143920595533538,
+      "gini_importance": 0.1902107657691475
+    },
+    {
+      "feature": "worst texture",
+      "importance_mean": 0.016326530612244934,
+      "importance_std": 0.001985731654736834,
+      "importance_normalized": 0.12903225806451654,
+      "gini_importance": 0.016497665513821272
+    },
+    {
+      "feature": "mean texture",
+      "importance_mean": 0.016012558869701765,
+      "importance_std": 0.0019354518062697106,
+      "importance_normalized": 0.12655086848635277,
+      "gini_importance": 0.018963000265267742
+    },
+    {
+      "feature": "worst area",
+      "importance_mean": 0.012244897959183662,
+      "importance_std": 0.004212372956043585,
+      "importance_normalized": 0.09677419354838711,
+      "gini_importance": 0.18980297295266677
+    },
+    {
+      "feature": "texture error",
+      "importance_mean": 0.00784929356357925,
+      "importance_std": 0.0010876300204514103,
+      "importance_normalized": 0.06203473945409413,
+      "gini_importance": 0.005996857118865376
+    },
+    {
+      "feature": "mean concave points",
+      "importance_mean": 0.00690737833594974,
+      "importance_std": 0.002175260040902821,
+      "importance_normalized": 0.054590570719602834,
+      "gini_importance": 0.075252527799639
+    },
+    {
+      "feature": "mean area",
+      "importance_mean": 0.00470957613814755,
+      "importance_std": 0.0007690705628832557,
+      "importance_normalized": 0.037220843672456476,
+      "gini_importance": 0.008531802939481978
+    },
+    {
+      "feature": "worst radius",
+      "importance_mean": 0.00439560439560438,
+      "importance_std": 0.002877598552562527,
+      "importance_normalized": 0.034739454094292715,
+      "gini_importance": 0.12768541503885586
+    },
+    {
+      "feature": "worst compactness",
+      "importance_mean": 0.00439560439560438,
+      "importance_std": 0.0,
+      "importance_normalized": 0.034739454094292715,
+      "gini_importance": 0.01582666207818385
+    },
+    {
+      "feature": "area error",
+      "importance_mean": 0.00439560439560438,
+      "importance_std": 0.0016613822989416523,
+      "importance_normalized": 0.034739454094292715,
+      "gini_importance": 0.010203074311181387
+    }
+  ]
+}
