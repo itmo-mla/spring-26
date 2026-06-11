@@ -1,0 +1,60 @@
+{
+  "dataset": "OpenML Titanic",
+  "sizes": {
+    "train": 785,
+    "validation": 262,
+    "test": 262
+  },
+  "missing_values": {
+    "age": 263,
+    "embarked": 2,
+    "fare": 1,
+    "pclass": 0,
+    "sibsp": 0,
+    "parch": 0,
+    "sex": 0
+  },
+  "tree_before_pruning": {
+    "depth": 7,
+    "nodes": 63,
+    "leaves": 32
+  },
+  "tree_after_pruning": {
+    "depth": 4,
+    "nodes": 13,
+    "leaves": 7
+  },
+  "pruned_nodes": 22,
+  "confusion_matrices": {
+    "id3_before_pruning": [
+      [
+        147,
+        15
+      ],
+      [
+        33,
+        67
+      ]
+    ],
+    "id3_after_pruning": [
+      [
+        146,
+        16
+      ],
+      [
+        26,
+        74
+      ]
+    ],
+    "sklearn": [
+      [
+        145,
+        17
+      ],
+      [
+        33,
+        67
+      ]
+    ]
+  }
+}
