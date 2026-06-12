@@ -1,0 +1,18 @@
+name: density_default
+task: density
+
+data:
+  n_samples: 50000
+  scale: true
+  pca_components: null
+  random_state: 0
+
+model:
+  n_components: 5
+  covariance_type: diag
+  n_init: 3
+  init_params: kmeans
+  max_iter: 100
+  tol: 1.0e-3
+  reg_covar: 1.0e-6
+  random_state: 0

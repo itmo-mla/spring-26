@@ -1,0 +1,18 @@
+name: density_full
+task: density
+
+# Full covariance is feasible on 200-d Santander only after PCA reduction.
+data:
+  n_samples: 50000
+  scale: true
+  pca_components: 20
+  random_state: 0
+
+model:
+  n_components: 5
+  covariance_type: full
+  n_init: 2
+  init_params: kmeans
+  max_iter: 150
+  reg_covar: 1.0e-5
+  random_state: 0

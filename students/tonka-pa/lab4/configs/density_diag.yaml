@@ -1,0 +1,15 @@
+name: density_diag
+task: density
+
+data:
+  n_samples: 50000
+  scale: true
+  random_state: 0
+
+model:
+  n_components: 5
+  covariance_type: diag
+  n_init: 3
+  init_params: kmeans
+  max_iter: 150
+  random_state: 0
